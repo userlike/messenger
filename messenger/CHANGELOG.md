@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.2](https://github.com/userlike/messenger/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2020-06-21)
+
+
+### Bug Fixes
+
+* fix main/types fields in package.json ([4b256cf](https://github.com/userlike/messenger/commit/4b256cf9d5a66d9817ba2a93af6c451321937672))
+
+
+
+
+
 ## [0.0.1-alpha.1](https://github.com/userlike/messenger/compare/v0.0.1-alpha.0...v0.0.1-alpha.1) (2020-06-21)
 
 **Note:** Version bump only for package @userlike/messenger
