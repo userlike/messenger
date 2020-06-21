@@ -3,11 +3,14 @@
   "version": "0.0.1-alpha.0",
   "main": "index.js",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@userlike/messenger-internal": "^0.0.1-alpha.0",
     "@userlike/messenger-types": "^0.0.1-alpha.0"
   },
-  "files": [
-    "dist"
-  ]
+  "publishConfig": {
+    "access": "public"
+  }
 }
