@@ -1,0 +1,36 @@
+{
+  "name": "umm-api",
+  "private": true,
+  "workspaces": [
+    "messenger-types",
+    "messenger-internal",
+    "messenger"
+  ],
+  "scripts": {
+    "commit": "git-cz",
+    "lerna:version": "lerna version --conventional-commits",
+    "lerna:version:pre": "yarn lerna:version --conventional-prerelease",
+    "lerna:version:grad": "yarn lerna:version --conventional-graduate",
+    "lerna:publish": "lerna publish from-package"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.4",
+    "@babel/preset-env": "7.8.4",
+    "@babel/preset-typescript": "7.8.3",
+    "@typescript-eslint/eslint-plugin": "2.20.0",
+    "@typescript-eslint/parser": "2.20.0",
+    "commitizen": "4.1.2",
+    "cz-lerna-changelog": "2.0.2",
+    "eslint": "6.8.0",
+    "jest": "25.1.0",
+    "lerna": "3.20.2",
+    "prettier": "1.19.1",
+    "typescript": "3.8.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  }
+}

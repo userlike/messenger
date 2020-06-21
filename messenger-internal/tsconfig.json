@@ -1,0 +1,13 @@
+{
+  "references": [
+    {
+      "path": "../messenger-types"
+    }
+  ],
+  "extends": "../tsconfig.common.json",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  }
+}

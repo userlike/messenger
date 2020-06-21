@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "es5",
+    "lib": ["ESNext", "dom"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "declaration": true,
+    "types": []
+  }
+}

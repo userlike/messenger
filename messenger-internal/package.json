@@ -1,0 +1,13 @@
+{
+  "name": "@userlike/messenger-internal",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@userlike/messenger-types": "0.0.1"
+  }
+}
