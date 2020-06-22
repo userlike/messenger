@@ -11,7 +11,8 @@
     "lerna:version": "lerna version --conventional-commits",
     "lerna:version:pre": "yarn lerna:version --conventional-prerelease",
     "lerna:version:grad": "yarn lerna:version --conventional-graduate",
-    "lerna:publish": "lerna publish from-package"
+    "lerna:publish": "lerna publish from-package",
+    "prepare": "yarn tsc -b --clean"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
