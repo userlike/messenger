@@ -30,4 +30,8 @@ interface MessengerOptions {
    * SHA-256 encoded widget id.
    */
   widgetId: string;
+  /**
+   * For internal use only. 
+   */
+  baseUrl?: string;
 }

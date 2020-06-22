@@ -11,15 +11,20 @@ import {
 export const createMessenger: CreateMessenger = async (
   opts
 ): Promise<ActionResult<string, AllApis>> => {
-  const { createMessenger, config } = await loadModule(window, opts.widgetId);
+  const { createMessenger, config } = await loadModule(
+    window,
+    opts.widgetId,
+    opts.baseUrl
+  );
   return createMessenger(opts.version)(config);
 };
 
 async function loadModule(
   window: Window,
-  sha256: string
+  sha256: string,
+  baseUrl?: string
 ): Promise<LegacyLoaderFactoryResult> {
-  const url = getUrl(sha256);
+  const url = getUrl(sha256, baseUrl);
   const uslkWindow = getUslkWindow(window);
 
   return new Promise<LegacyLoaderFactoryResult>((resolve) => {
@@ -57,9 +62,10 @@ type Dictionary<K extends keyof any, T> = {
 
 declare const process: { env: Dictionary<string, string> };
 
-function getUrl(sha256: string) {
-  const baseUrl =
-    process.env.USERLIKE_WIDGET_URL ??
-    "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com";
+function getUrl(
+  sha256: string,
+  baseUrl = process.env.USERLIKE_WIDGET_URL ??
+    "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com"
+) {
   return `${baseUrl}/${sha256}.js`;
 }
