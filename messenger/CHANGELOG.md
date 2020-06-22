@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.3](https://github.com/userlike/messenger/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2020-06-22)
+
+
+### Features
+
+* add baseUrl option ([c0d1cee](https://github.com/userlike/messenger/commit/c0d1ceed1501883455feca90f9ee8ec02ea72dbc))
+
+
+
+
+
 ## [0.0.1-alpha.2](https://github.com/userlike/messenger/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2020-06-21)
 
 

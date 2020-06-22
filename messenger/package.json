@@ -1,6 +1,6 @@
 {
   "name": "@userlike/messenger",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -8,8 +8,8 @@
     "dist"
   ],
   "dependencies": {
-    "@userlike/messenger-internal": "^0.0.1-alpha.1",
-    "@userlike/messenger-types": "^0.0.1-alpha.1"
+    "@userlike/messenger-internal": "^0.0.1-alpha.3",
+    "@userlike/messenger-types": "^0.0.1-alpha.3"
   },
   "publishConfig": {
     "access": "public"
