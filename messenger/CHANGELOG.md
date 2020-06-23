@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.7](https://github.com/userlike/messenger/compare/v0.0.1-alpha.6...v0.0.1-alpha.7) (2020-06-23)
+
+
+### Bug Fixes
+
+* downgrade es target version, rm tsbuildinfo from dist ([c8eae24](https://github.com/userlike/messenger/commit/c8eae242cbef0e1790f50e32fcc6a8ac7a72205b))
+
+
+
+
+
 ## [0.0.1-alpha.6](https://github.com/userlike/messenger/compare/v0.0.1-alpha.5...v0.0.1-alpha.6) (2020-06-23)
 
 
