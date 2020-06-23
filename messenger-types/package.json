@@ -12,7 +12,8 @@
   },
   "license": "MIT",
   "files": [
-    "dist"
+    "dist/es",
+    "dist/cjs"
   ],
   "publishConfig": {
     "access": "public"

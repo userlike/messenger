@@ -12,7 +12,8 @@
   },
   "license": "MIT",
   "files": [
-    "dist"
+    "dist/es",
+    "dist/cjs"
   ],
   "dependencies": {
     "@userlike/messenger-internal": "^0.0.1-alpha.6",
