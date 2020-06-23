@@ -1,13 +1,16 @@
 {
   "references": [
     {
+      "path": "../messenger-internal"
+    },
+    {
       "path": "../messenger-types"
     }
   ],
-  "extends": "../config/tsconfig.es.json",
+  "extends": "../config/tsconfig.cjs.json",
   "include": ["src/**/*"],
   "compilerOptions": {
-    "outDir": "dist/es",
+    "outDir": "dist/cjs",
     "rootDir": "src"
   }
 }

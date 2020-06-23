@@ -7,10 +7,10 @@
       "path": "../messenger-types"
     }
   ],
-  "extends": "../tsconfig.common.json",
+  "extends": "../config/tsconfig.es.json",
   "include": ["src/**/*"],
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "dist/es",
     "rootDir": "src"
   }
 }

@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "target": "es5",
-    "lib": ["ESNext", "dom"],
+    "target": "ESNext",
     "module": "ESNext",
+    "composite": true,
+    "lib": ["ESNext", "dom"],
     "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
