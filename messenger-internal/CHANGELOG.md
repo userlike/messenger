@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.8](https://github.com/userlike/messenger/compare/v0.0.1-alpha.7...v0.0.1-alpha.8) (2020-06-29)
+
+
+### Features
+
+* use a modular script loader, relying on widget key as a unique identifier ([0386673](https://github.com/userlike/messenger/commit/038667388ae491e984d72d89e09ae4d0cd4b2fc9))
+
+
+
+
+
 ## [0.0.1-alpha.7](https://github.com/userlike/messenger/compare/v0.0.1-alpha.6...v0.0.1-alpha.7) (2020-06-23)
 
 
