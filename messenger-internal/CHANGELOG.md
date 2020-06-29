@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.11](https://github.com/userlike/messenger/compare/v0.0.1-alpha.10...v0.0.1-alpha.11) (2020-06-29)
+
+
+### Features
+
+* move widget loader to @userlike/messenger-internal ([c0e6527](https://github.com/userlike/messenger/commit/c0e6527de7af52008d3c26115e942e650f7117d6))
+
+
+
+
+
 ## [0.0.1-alpha.10](https://github.com/userlike/messenger/compare/v0.0.1-alpha.9...v0.0.1-alpha.10) (2020-06-29)
 
 
