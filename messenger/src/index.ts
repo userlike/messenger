@@ -1,6 +1,7 @@
 import {
   LegacyLoaderFactoryResult,
   onScriptLoad,
+  setPureLoader,
 } from "@userlike/messenger-internal";
 import {
   CreateMessenger,
@@ -27,6 +28,7 @@ async function loadModule(
   const url = getUrl(widgetKey, baseUrl);
 
   return new Promise<LegacyLoaderFactoryResult>((resolve) => {
+    setPureLoader();
     onScriptLoad(widgetKey, (result) => resolve(result));
     loadScript(window, url);
   });

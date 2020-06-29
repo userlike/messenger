@@ -35,6 +35,14 @@ export const onScriptLoad = (
   return () => target.removeEventListener(EVENT_NAME, handler);
 };
 
+export const isPureLoader = (global: Window = window) => {
+  "__USERLIKE_PURE__" in global;
+};
+
+export const setPureLoader = (global: Window = window) => {
+  (global as any).__USERLIKE_PURE__ = true;
+};
+
 export interface LegacyOptions {
   ready?: () => void;
   onError?: (err: unknown) => void;
