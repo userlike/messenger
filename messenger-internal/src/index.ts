@@ -36,7 +36,7 @@ export const onScriptLoad = (
 };
 
 export const isPureLoader = (global: Window = window) => {
-  "__USERLIKE_PURE__" in global;
+  return "__USERLIKE_PURE__" in global;
 };
 
 export const setPureLoader = (global: Window = window) => {
