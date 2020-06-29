@@ -1,6 +1,6 @@
 import {
-  LegacyLoaderFactory,
   LegacyLoaderFactoryResult,
+  onScriptLoad,
 } from "@userlike/messenger-internal";
 import {
   CreateMessenger,
@@ -13,7 +13,7 @@ export const createMessenger: CreateMessenger = async (
 ): Promise<ActionResult<string, AllApis>> => {
   const { createMessenger, config } = await loadModule(
     window,
-    opts.widgetId,
+    opts.widgetKey,
     opts.baseUrl
   );
   return createMessenger(opts.version)(config);
@@ -21,17 +21,13 @@ export const createMessenger: CreateMessenger = async (
 
 async function loadModule(
   window: Window,
-  sha256: string,
+  widgetKey: string,
   baseUrl?: string
 ): Promise<LegacyLoaderFactoryResult> {
-  const url = getUrl(sha256, baseUrl);
-  const uslkWindow = getUslkWindow(window);
+  const url = getUrl(widgetKey, baseUrl);
 
   return new Promise<LegacyLoaderFactoryResult>((resolve) => {
-    uslkWindow.__USERLIKE_DEFINE__ = (factory: LegacyLoaderFactory) => {
-      const mod = factory();
-      resolve(mod);
-    };
+    onScriptLoad(widgetKey, (result) => resolve(result));
     loadScript(window, url);
   });
 }
@@ -46,14 +42,6 @@ async function loadScript(window: Window, url: string) {
     script.src = url;
     window.document.getElementsByTagName("head")[0].appendChild(script);
   });
-}
-
-interface UserlikeWindow extends Window {
-  __USERLIKE_DEFINE__?: (factory: LegacyLoaderFactory) => void;
-}
-
-function getUslkWindow(window: Window) {
-  return window as UserlikeWindow;
 }
 
 type Dictionary<K extends keyof any, T> = {

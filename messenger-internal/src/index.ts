@@ -1,5 +1,40 @@
 import { ActionResult, AllApis } from "@userlike/messenger-types";
 
+class UserlikeMessengerScriptEvent extends CustomEvent<
+  LegacyLoaderFactoryResult
+> {}
+
+const EVENT_NAME = "userlike:messenger:script";
+
+export const notifyScriptLoad = (
+  payload: LegacyLoaderFactoryResult,
+  target: EventTarget = window
+): void => {
+  target.dispatchEvent(
+    new UserlikeMessengerScriptEvent(EVENT_NAME, {
+      detail: payload,
+    })
+  );
+};
+
+export const onScriptLoad = (
+  widgetKey: string,
+  cb: (r: LegacyLoaderFactoryResult) => void,
+  target: EventTarget = window
+): (() => void) => {
+  const handler = (event: Event) => {
+    if (!(event instanceof UserlikeMessengerScriptEvent)) {
+      return;
+    }
+    if (event.detail.widget_key !== widgetKey) return;
+    target.removeEventListener(EVENT_NAME, handler);
+    cb(event.detail);
+  };
+
+  target.addEventListener(EVENT_NAME, handler);
+  return () => target.removeEventListener(EVENT_NAME, handler);
+};
+
 export interface LegacyOptions {
   ready?: () => void;
   onError?: (err: unknown) => void;
@@ -16,6 +51,8 @@ export interface LegacyLoaderFactory {
  * For internal use.
  */
 export interface LegacyLoaderFactoryResult {
+  app_key: string;
+  widget_key: string;
   load: (opts?: LegacyOptions) => Promise<void>;
   config: unknown;
   createMessenger: (

@@ -29,7 +29,7 @@ interface MessengerOptions {
   /**
    * SHA-256 encoded widget id.
    */
-  widgetId: string;
+  widgetKey: string;
   /**
    * For internal use only. 
    */
