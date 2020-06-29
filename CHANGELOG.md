@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.9](https://github.com/userlike/messenger/compare/v0.0.1-alpha.8...v0.0.1-alpha.9) (2020-06-29)
+
+
+### Features
+
+* introduce pure loader flag ([9217bb1](https://github.com/userlike/messenger/commit/9217bb14ab4cf6f3c8ae21a9631a89855546d595))
+
+
+
+
+
 ## [0.0.1-alpha.8](https://github.com/userlike/messenger/compare/v0.0.1-alpha.7...v0.0.1-alpha.8) (2020-06-29)
 
 
