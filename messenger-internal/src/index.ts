@@ -1,8 +1,6 @@
 import { ActionResult, AllApis } from "@userlike/messenger-types";
 
-class UserlikeMessengerScriptEvent extends CustomEvent<
-  LegacyLoaderFactoryResult
-> {}
+class UserlikeMessengerScriptEvent extends CustomEvent<WidgetLoader> {}
 
 const EVENT_NAME = "userlike:messenger:script";
 
@@ -10,10 +8,10 @@ export async function loadWidget(
   window: Window,
   widgetKey: string,
   baseUrl?: string
-): Promise<LegacyLoaderFactoryResult> {
+): Promise<WidgetLoader> {
   const url = getUrl(widgetKey, baseUrl);
 
-  return new Promise<LegacyLoaderFactoryResult>((resolve) => {
+  return new Promise<WidgetLoader>((resolve) => {
     setPureLoader();
     onScriptLoad(widgetKey, (result) => resolve(result));
     loadScript(window, url);
@@ -21,7 +19,7 @@ export async function loadWidget(
 }
 
 export const notifyScriptLoad = (
-  payload: LegacyLoaderFactoryResult,
+  payload: WidgetLoader,
   target: EventTarget = window
 ): void => {
   target.dispatchEvent(
@@ -59,7 +57,7 @@ async function loadScript(window: Window, url: string) {
 
 const onScriptLoad = (
   widgetKey: string,
-  cb: (r: LegacyLoaderFactoryResult) => void,
+  cb: (r: WidgetLoader) => void,
   target: EventTarget = window
 ): (() => void) => {
   const handler = (event: Event) => {
@@ -88,22 +86,24 @@ export interface LegacyOptions {
   onError?: (err: unknown) => void;
 }
 
-/**
- * For internal use.
- */
-export interface LegacyLoaderFactory {
-  (config?: unknown, global?: Window): LegacyLoaderFactoryResult;
+export interface WidgetLoaderSettings {
+  app_key: string;
+  widget_key: string;
+  config: unknown;
 }
 
 /**
  * For internal use.
  */
-export interface LegacyLoaderFactoryResult {
+export interface WidgetLoader {
   app_key: string;
   widget_key: string;
-  load: (opts?: LegacyOptions) => Promise<void>;
   config: unknown;
+
+  load: (opts?: LegacyOptions) => Promise<void>;
   createMessenger: (
     version: number
-  ) => (config: unknown) => Promise<ActionResult<string, AllApis>>;
+  ) => (
+    settings: WidgetLoaderSettings
+  ) => Promise<ActionResult<string, AllApis>>;
 }
