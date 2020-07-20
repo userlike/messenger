@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.13](https://github.com/userlike/messenger/compare/v0.0.1-alpha.12...v0.0.1-alpha.13) (2020-07-20)
+
+
+### Bug Fixes
+
+* fix broken js bundles ([a20ae32](https://github.com/userlike/messenger/commit/a20ae32173bb6082186f004ae91d11ef5d585051))
+
+
+
+
+
 ## [0.0.1-alpha.12](https://github.com/userlike/messenger/compare/v0.0.1-alpha.11...v0.0.1-alpha.12) (2020-06-30)
 
 
