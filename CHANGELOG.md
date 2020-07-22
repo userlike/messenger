@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.14](https://github.com/userlike/messenger/compare/v0.0.1-alpha.13...v0.0.1-alpha.14) (2020-07-22)
+
+
+### Bug Fixes
+
+* fix script loading ([3185d2a](https://github.com/userlike/messenger/commit/3185d2a743ab22ad4e841dd09051cbd05eb8eb5f))
+
+
+
+
+
 ## [0.0.1-alpha.13](https://github.com/userlike/messenger/compare/v0.0.1-alpha.12...v0.0.1-alpha.13) (2020-07-20)
 
 
