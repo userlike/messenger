@@ -1,7 +1,5 @@
 import { ActionResult, AllApis } from "@userlike/messenger-types";
 
-class UserlikeMessengerScriptEvent extends CustomEvent<WidgetLoader> {}
-
 const EVENT_NAME = "userlike:messenger:script";
 
 export async function loadWidget(
@@ -23,7 +21,7 @@ export const notifyScriptLoad = (
   target: EventTarget = window
 ): void => {
   target.dispatchEvent(
-    new UserlikeMessengerScriptEvent(EVENT_NAME, {
+    new CustomEvent(EVENT_NAME, {
       detail: payload,
     })
   );
@@ -61,7 +59,7 @@ const onScriptLoad = (
   target: EventTarget = window
 ): (() => void) => {
   const handler = (event: Event) => {
-    if (!(event instanceof UserlikeMessengerScriptEvent)) {
+    if (!isScriptEvent(event)) {
       return;
     }
     if (event.detail.widget_key !== widgetKey) return;
@@ -72,6 +70,9 @@ const onScriptLoad = (
   target.addEventListener(EVENT_NAME, handler);
   return () => target.removeEventListener(EVENT_NAME, handler);
 };
+
+const isScriptEvent = (evt: Event): evt is CustomEvent<WidgetLoader> =>
+  evt.type === EVENT_NAME;
 
 export const isPureLoader = (global: Window = window) => {
   return "__USERLIKE_PURE__" in global;
