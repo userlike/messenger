@@ -88,7 +88,6 @@ export interface LegacyOptions {
 }
 
 export interface WidgetLoaderSettings {
-  app_key: string;
   widget_key: string;
   config: unknown;
 }
@@ -97,7 +96,6 @@ export interface WidgetLoaderSettings {
  * For internal use.
  */
 export interface WidgetLoader {
-  app_key: string;
   widget_key: string;
   config: unknown;
 
