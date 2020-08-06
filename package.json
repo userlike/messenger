@@ -1,11 +1,7 @@
 {
   "name": "umm-api",
   "private": true,
-  "workspaces": [
-    "messenger-types",
-    "messenger-internal",
-    "messenger"
-  ],
+  "workspaces": ["packages/*"],
   "scripts": {
     "commit": "git-cz",
     "lerna:version": "lerna version --conventional-commits",

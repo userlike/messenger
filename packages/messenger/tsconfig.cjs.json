@@ -7,7 +7,7 @@
       "path": "../messenger-types"
     }
   ],
-  "extends": "../config/tsconfig.cjs.json",
+  "extends": "../../config/tsconfig.cjs.json",
   "include": ["src/**/*"],
   "compilerOptions": {
     "outDir": "dist/cjs",
