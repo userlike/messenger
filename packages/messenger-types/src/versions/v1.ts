@@ -29,8 +29,17 @@ export interface ApiActions {
   maximize(): Promise<ActionResult<string, void>>;
 
   /**
-   * TODO: I don't know the exact details of this. Improve docs.
-   * Set custom data attached to every conversation that contact is involved with.
+   * Set custom data.
    */
-  setCustomData(data: object): Promise<ActionResult<string, void>>;
+  setCustomData(
+    data: Record<string, unknown>
+  ): Promise<ActionResult<string, void>>;
+
+  /**
+   * Set contact info.
+   */
+  setContactInfo(data: {
+    name?: string;
+    email?: string;
+  }): Promise<ActionResult<string, void>>;
 }
