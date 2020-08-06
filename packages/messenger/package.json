@@ -1,6 +1,6 @@
 {
   "name": "@userlike/messenger",
-  "version": "0.0.1-alpha.16",
+  "version": "0.1.0-alpha.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
@@ -27,7 +27,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@userlike/messenger-internal": "^0.0.1-alpha.16",
-    "@userlike/messenger-types": "^0.0.1-alpha.16"
+    "@userlike/messenger-internal": "^0.1.0-alpha.0",
+    "@userlike/messenger-types": "^0.1.0-alpha.0"
   }
 }

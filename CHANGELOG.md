@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.0](https://github.com/userlike/messenger/compare/v0.0.1-alpha.15...v0.1.0-alpha.0) (2020-08-06)
+
+
+### Features
+
+* add setContactInfo ([641c6cf](https://github.com/userlike/messenger/commit/641c6cfdfce1c6981a4699abe9844825791bb81c))
+
+
+
+
+
 ## [0.0.1-alpha.16](https://github.com/userlike/messenger/compare/v0.0.1-alpha.15...v0.0.1-alpha.16) (2020-08-06)
 
 **Note:** Version bump only for package messenger
