@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-internal.0](https://github.com/userlike/messenger/compare/v0.1.0-alpha.0...v0.1.0-internal.0) (2020-08-06)
+
+
+### Reverts
+
+* "refactor: get rid of app_key ([#1](https://github.com/userlike/messenger/issues/1))" ([fe399eb](https://github.com/userlike/messenger/commit/fe399eb3275c4ef4fd5d8969696ea36f80fa7017))
+
+
+
+
+
 # [0.1.0-alpha.0](https://github.com/userlike/messenger/compare/v0.0.1-alpha.15...v0.1.0-alpha.0) (2020-08-06)
 
 **Note:** Version bump only for package @userlike/messenger-internal

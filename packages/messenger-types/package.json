@@ -1,6 +1,6 @@
 {
   "name": "@userlike/messenger-types",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-internal.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
