@@ -5,21 +5,29 @@
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
   "sideEffects": false,
-  "scripts": {
-    "build": "tsc",
-    "build:cjs": "tsc -b tsconfig.cjs.json",
-    "clean": "rm -rf dist"
+  "homepage": "https://github.com/userlike/messenger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/userlike/messenger.git",
+    "directory": "packages/messenger"
   },
   "license": "MIT",
   "files": [
     "dist/es",
     "dist/cjs"
   ],
-  "dependencies": {
-    "@userlike/messenger-internal": "^0.0.1-alpha.15",
-    "@userlike/messenger-types": "^0.0.1-alpha.13"
+  "scripts": {
+    "build": "tsc",
+    "build:cjs": "tsc -b tsconfig.cjs.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint src --ext .ts",
+    "test": "jest"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@userlike/messenger-internal": "^0.0.1-alpha.15",
+    "@userlike/messenger-types": "^0.0.1-alpha.13"
   }
 }

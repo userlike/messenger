@@ -1,1 +1,1 @@
-See `@userlike/messenger` for further details.
+See the [homepage]().
