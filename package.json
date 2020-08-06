@@ -1,33 +1,26 @@
 {
-  "name": "umm-api",
+  "name": "messenger",
+  "homepage": "https://github.com/userlike/messenger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/userlike/messenger.git"
+  },
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "commit": "git-cz",
-    "lerna:version": "lerna version --conventional-commits",
-    "lerna:version:pre": "yarn lerna:version --conventional-prerelease",
-    "lerna:version:grad": "yarn lerna:version --conventional-graduate",
-    "lerna:publish": "lerna publish from-package",
-    "prepare": "lerna run clean && lerna run build && lerna run build:cjs"
+    "build": "mklib build",
+    "lint": "mklib lint",
+    "test": "mklib test",
+    "commit": "mklib commit",
+    "v": "mklib version",
+    "v:pre": "mklib version:pre",
+    "v:grad": "mklib version:grad",
+    "pub": "mklib publish",
+    "prepare": "mklib prepare"
   },
   "devDependencies": {
-    "@babel/cli": "7.10.5",
-    "@babel/core": "7.10.5",
-    "@babel/preset-env": "7.10.4",
-    "@babel/preset-typescript": "7.10.4",
-    "@typescript-eslint/eslint-plugin": "2.20.0",
-    "@typescript-eslint/parser": "2.20.0",
-    "commitizen": "4.1.2",
-    "cz-lerna-changelog": "2.0.3",
-    "eslint": "6.8.0",
-    "jest": "25.1.0",
-    "lerna": "3.22.1",
-    "prettier": "1.19.1",
-    "typescript": "3.9.7"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
-    }
+    "@anilanar/mklib": "^1.0.9"
   }
 }
