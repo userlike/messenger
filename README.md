@@ -6,7 +6,7 @@
 
 This is currently in alpha state and is not suggested for production use.
 
-During the alpha phase, there will be breaking changes without notice.
+Please be aware that during the alpha phase, there will be breaking changes without notice.
 
 ## Install
 
