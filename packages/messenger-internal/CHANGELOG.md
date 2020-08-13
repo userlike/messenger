@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.1](https://github.com/userlike/messenger/compare/v0.1.0-alpha.0...v0.1.0-alpha.1) (2020-08-13)
+
+
+### Bug Fixes
+
+* reduce the chance of multiple messengers conflicting with each other ([e7bc350](https://github.com/userlike/messenger/commit/e7bc350bee9ef10a2faede0d14b09df8321866c7))
+
+
+
+
+
 # [0.1.0-alpha.0](https://github.com/userlike/messenger/compare/v0.0.1-alpha.15...v0.1.0-alpha.0) (2020-08-06)
 
 **Note:** Version bump only for package @userlike/messenger-internal
