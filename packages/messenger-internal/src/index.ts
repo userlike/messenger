@@ -10,7 +10,7 @@ export async function loadWidget(
   const url = getUrl(widgetKey, baseUrl);
 
   return new Promise<WidgetLoader>((resolve) => {
-    setPureLoader();
+    setPureLoader(widgetKey);
     onScriptLoad(widgetKey, (result) => resolve(result));
     loadScript(window, url);
   });
@@ -76,13 +76,18 @@ function isScriptEvent(evt: Event): evt is CustomEvent<WidgetLoader> {
   return evt.type === EVENT_NAME;
 }
 
-export function isPureLoader(global: Window = window): boolean {
-  return "__USERLIKE_PURE__" in global;
+export function isPureLoader(
+  widgetKey: string,
+  global: Window = window
+): boolean {
+  return getCustomWindow(global).__USERLIKE_PURE__[widgetKey] === true;
 }
 
-export function setPureLoader(global: Window = window): void {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (global as any).__USERLIKE_PURE__ = true;
+export function setPureLoader(
+  widgetKey: string,
+  global: Window = window
+): void {
+  getCustomWindow(global).__USERLIKE_PURE__[widgetKey] = true;
 }
 
 export interface LegacyOptions {
@@ -108,4 +113,17 @@ export interface WidgetLoader {
   ) => (
     settings: WidgetLoaderSettings
   ) => Promise<ActionResult<string, AllApis>>;
+}
+
+type CustomWindow = Window &
+  typeof globalThis & {
+    __USERLIKE_PURE__: Dictionary<string, true>;
+  };
+
+function getCustomWindow(window: Window) {
+  const customWindow = (window as unknown) as CustomWindow;
+  Object.assign(customWindow, {
+    __USERLIKE_PURE__: { ...customWindow.__USERLIKE_PURE__ },
+  });
+  return customWindow;
 }
