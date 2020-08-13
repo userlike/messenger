@@ -8,16 +8,42 @@ export async function loadWidget(
   baseUrl?: string
 ): Promise<WidgetLoader> {
   const url = getUrl(widgetKey, baseUrl);
+  setPureLoader(widgetKey);
 
-  return new Promise<WidgetLoader>((resolve) => {
-    setPureLoader(widgetKey);
-    onScriptLoad(widgetKey, (result) => resolve(result));
-    loadScript(window, url);
+  return new Promise<WidgetLoader>((resolve, reject) => {
+    window.addEventListener(EVENT_NAME, handler);
+
+    function handler(event: Event): void {
+      if (!isScriptEvent(event)) {
+        return;
+      }
+      if (
+        event.detail.kind === "error" &&
+        event.detail.error.widget_key === widgetKey
+      ) {
+        window.removeEventListener(EVENT_NAME, handler);
+        return reject(new Error("Could not load widget script"));
+      }
+      if (
+        event.detail.kind === "success" &&
+        event.detail.value.widget_key === widgetKey
+      ) {
+        window.removeEventListener(EVENT_NAME, handler);
+        return resolve(event.detail.value);
+      }
+    }
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.defer = true;
+    script.onerror = reject;
+    script.src = url;
+    window.document.getElementsByTagName("head")[0].appendChild(script);
   });
 }
 
 export const notifyScriptLoad = (
-  payload: WidgetLoader,
+  payload: ActionResult<{ widget_key: string }, WidgetLoader>,
   target: EventTarget = window
 ): void => {
   target.dispatchEvent(
@@ -42,37 +68,9 @@ function getUrl(
   return `${baseUrl}/${sha256}.js`;
 }
 
-async function loadScript(window: Window, url: string) {
-  return new Promise<void>((resolve, reject) => {
-    const script = document.createElement("script");
-    script.async = true;
-    script.defer = true;
-    script.onload = () => resolve(undefined);
-    script.onerror = reject;
-    script.src = url;
-    window.document.getElementsByTagName("head")[0].appendChild(script);
-  });
-}
-
-function onScriptLoad(
-  widgetKey: string,
-  cb: (r: WidgetLoader) => void,
-  target: EventTarget = window
-): () => void {
-  const handler = (event: Event) => {
-    if (!isScriptEvent(event)) {
-      return;
-    }
-    if (event.detail.widget_key !== widgetKey) return;
-    target.removeEventListener(EVENT_NAME, handler);
-    cb(event.detail);
-  };
-
-  target.addEventListener(EVENT_NAME, handler);
-  return () => target.removeEventListener(EVENT_NAME, handler);
-}
-
-function isScriptEvent(evt: Event): evt is CustomEvent<WidgetLoader> {
+function isScriptEvent(
+  evt: Event
+): evt is CustomEvent<ActionResult<{ widget_key: string }, WidgetLoader>> {
   return evt.type === EVENT_NAME;
 }
 
