@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.2](https://github.com/userlike/messenger/compare/v0.1.0-alpha.1...v0.1.0-alpha.2) (2020-08-13)
+
+
+### Bug Fixes
+
+* improve error handling of widget loading ([c1870f8](https://github.com/userlike/messenger/commit/c1870f8c429efffae558a339c02b16b10a49e4d3))
+
+
+
+
+
 # [0.1.0-alpha.1](https://github.com/userlike/messenger/compare/v0.1.0-alpha.0...v0.1.0-alpha.1) (2020-08-13)
 
 
