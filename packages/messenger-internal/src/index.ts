@@ -27,6 +27,7 @@ export const notifyScriptLoad = (
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Dictionary<K extends keyof any, T> = {
   [P in K]?: T;
 };
@@ -53,11 +54,11 @@ async function loadScript(window: Window, url: string) {
   });
 }
 
-const onScriptLoad = (
+function onScriptLoad(
   widgetKey: string,
   cb: (r: WidgetLoader) => void,
   target: EventTarget = window
-): (() => void) => {
+): () => void {
   const handler = (event: Event) => {
     if (!isScriptEvent(event)) {
       return;
@@ -69,18 +70,20 @@ const onScriptLoad = (
 
   target.addEventListener(EVENT_NAME, handler);
   return () => target.removeEventListener(EVENT_NAME, handler);
-};
+}
 
-const isScriptEvent = (evt: Event): evt is CustomEvent<WidgetLoader> =>
-  evt.type === EVENT_NAME;
+function isScriptEvent(evt: Event): evt is CustomEvent<WidgetLoader> {
+  return evt.type === EVENT_NAME;
+}
 
-export const isPureLoader = (global: Window = window) => {
+export function isPureLoader(global: Window = window): boolean {
   return "__USERLIKE_PURE__" in global;
-};
+}
 
-export const setPureLoader = (global: Window = window) => {
+export function setPureLoader(global: Window = window): void {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (global as any).__USERLIKE_PURE__ = true;
-};
+}
 
 export interface LegacyOptions {
   ready?: () => void;
