@@ -3,7 +3,7 @@
     "target": "ES5",
     "module": "ES2015",
     "composite": true,
-    "lib": ["ESNext", "dom"],
+    "lib": ["ES5", "dom", "ES2015.Promise"],
     "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,

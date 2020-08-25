@@ -120,8 +120,6 @@ type CustomWindow = Window &
 
 function getCustomWindow(window: Window) {
   const customWindow = (window as unknown) as CustomWindow;
-  Object.assign(customWindow, {
-    __USERLIKE_PURE__: { ...customWindow.__USERLIKE_PURE__ },
-  });
+  customWindow.__USERLIKE_PURE__ = { ...customWindow.__USERLIKE_PURE__ };
   return customWindow;
 }
