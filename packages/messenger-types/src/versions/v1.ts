@@ -5,14 +5,14 @@ export interface Api extends ApiActions, ApiState {
   version: 1;
 }
 
-export enum UI {
+export enum UIState {
   Hidden = "hidden",
   Minimized = "minimized",
   Maximized = "maximized",
 }
 
 export interface State {
-  ui: UI;
+  ui: UIState;
 }
 
 export interface ApiState {
