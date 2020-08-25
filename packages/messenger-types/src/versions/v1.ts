@@ -45,6 +45,18 @@ export interface ApiActions {
   maximize(): Promise<ActionResult<string, void>>;
 
   /**
+   * Experimental.
+   */
+  __unstableStartConversation(): Promise<ActionResult<string, void>>;
+
+  /**
+   * Experimental.
+   */
+  __unstableStartConversationWithOperator(
+    operatorId: number
+  ): Promise<ActionResult<string, void>>;
+
+  /**
    * Set custom data.
    */
   setCustomData(
