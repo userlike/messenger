@@ -1,7 +1,23 @@
 import { ActionResult } from "../ActionResult";
+import { Observable } from "../Observable";
 
-export interface Api extends ApiActions {
+export interface Api extends ApiActions, ApiState {
   version: 1;
+}
+
+export enum UI {
+  Hidden = "hidden",
+  Minimized = "minimized",
+  Maximized = "maximized",
+}
+
+export interface State {
+  ui: UI;
+}
+
+export interface ApiState {
+  state$: Observable<State>;
+  getState(): State;
 }
 
 export interface ApiActions {
