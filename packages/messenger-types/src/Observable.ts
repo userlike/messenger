@@ -26,11 +26,11 @@ export interface Subscription {
 
 export interface Observer<T> {
   // Receives the next value in the sequence
-  next(value: T): void;
+  next?(value: T): void;
 
   // Receives the sequence error
-  error(errorValue: unknown): void;
+  error?(errorValue: unknown): void;
 
   // Receives a completion notification
-  complete(): void;
+  complete?(): void;
 }
