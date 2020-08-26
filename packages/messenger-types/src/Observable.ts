@@ -209,7 +209,7 @@
  * libraries implement this interface. Most prominent one is rxjs, which is also
  * used by Angular.
  */
-export interface Subscribable<T> {
+export interface Observable<T> {
   subscribe(observer?: PartialObserver<T>): Unsubscribable;
   /** @deprecated Use an observer instead of a complete callback */
   subscribe(
