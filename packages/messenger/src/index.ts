@@ -1,9 +1,11 @@
-import { loadWidget } from "@userlike/messenger-internal";
 import {
   CreateMessenger,
   ActionResult,
   AllApis,
-} from "@userlike/messenger-types";
+  loadWidget,
+} from "@userlike/messenger-internal";
+
+export * from "@userlike/messenger-internal";
 
 export const createMessenger: CreateMessenger = async (
   opts

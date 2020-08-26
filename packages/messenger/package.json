@@ -27,7 +27,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@userlike/messenger-internal": "^0.1.0-alpha.4",
-    "@userlike/messenger-types": "^0.1.0-alpha.4"
+    "@userlike/messenger-internal": "^0.1.0-alpha.4"
   }
 }

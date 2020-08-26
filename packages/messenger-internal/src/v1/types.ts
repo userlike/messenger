@@ -1,5 +1,5 @@
-import { ActionResult } from "../ActionResult";
-import { Observable } from "../Observable";
+import type { ActionResult } from "../ActionResult";
+import type { Observable } from "./Observable";
 
 export interface Api extends ApiActions, ApiState {
   version: 1;
@@ -56,18 +56,6 @@ export interface ApiActions {
   maximize(): Promise<ActionResult<string, void>>;
 
   /**
-   * Experimental.
-   */
-  __unstableStartConversation(): Promise<ActionResult<string, void>>;
-
-  /**
-   * Experimental.
-   */
-  __unstableStartConversationWithOperator(
-    operatorId: number
-  ): Promise<ActionResult<string, void>>;
-
-  /**
    * Set custom data.
    */
   setCustomData(
@@ -81,4 +69,16 @@ export interface ApiActions {
     name?: string;
     email?: string;
   }): Promise<ActionResult<string, void>>;
+
+  /**
+   * Experimental.
+   */
+  __unstableStartConversation(): Promise<ActionResult<string, void>>;
+
+  /**
+   * Experimental.
+   */
+  __unstableStartConversationWithOperator(
+    operatorId: number
+  ): Promise<ActionResult<string, void>>;
 }

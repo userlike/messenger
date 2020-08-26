@@ -12,11 +12,11 @@ export interface ActionError<E> {
   error: E;
 }
 
-export const success = <A>(a: A): ActionSuccess<A> => ({
+export const success = <E = never, A = never>(a: A): ActionResult<E, A> => ({
   kind: "success",
   value: a,
 });
-export const err = <E>(err: E): ActionError<E> => ({
+export const err = <E = never, A = never>(err: E): ActionResult<E, A> => ({
   kind: "error",
   error: err,
 });

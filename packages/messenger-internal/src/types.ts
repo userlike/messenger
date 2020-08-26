@@ -1,11 +1,12 @@
-import { ActionResult } from "./ActionResult";
-import {
+import type { ActionResult } from "./ActionResult";
+import type {
   SupportedMessengerInfo,
   DeprecatedMessengerInfo,
   EndOfLifeMessengerInfo,
   VersionedApi,
 } from "./versioning";
-import * as V1 from "./versions/v1";
+
+import type * as V1 from "./v1";
 
 /**
  * Creates a messenger. This won't render the messenger. Use `mount` to render it.
@@ -25,13 +26,13 @@ interface MessengerOptions {
   /**
    * API version to use.
    */
-  version: 1;
+  version: 0 | 1;
   /**
    * SHA-256 encoded widget id.
    */
   widgetKey: string;
   /**
-   * For internal use only. 
+   * For internal use only.
    */
   baseUrl?: string;
 }

@@ -1,9 +1,4 @@
 {
-  "references": [
-    {
-      "path": "../messenger-types"
-    }
-  ],
   "extends": "../../config/tsconfig.cjs.json",
   "include": ["src/**/*.ts"],
   "compilerOptions": {
