@@ -13,6 +13,17 @@ export enum UIState {
 
 export interface State {
   ui: UIState;
+  conversations: Conversation[];
+}
+
+export interface Conversation {
+  id: number;
+  messages: Message[];
+  unread: Message[];
+}
+
+export interface Message {
+  id: string;
 }
 
 export interface ApiState {
