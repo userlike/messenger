@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.5](https://github.com/userlike/messenger/compare/v0.1.0-alpha.4...v0.1.0-alpha.5) (2020-08-27)
+
+
+### Features
+
+* add legacy api as v0 ([935ace2](https://github.com/userlike/messenger/commit/935ace2beeb45cc9a1205add95d29ef5f9f62923))
+
+
+
+
+
 # [0.1.0-alpha.4](https://github.com/userlike/messenger/compare/v0.1.0-alpha.3...v0.1.0-alpha.4) (2020-08-25)
 
 **Note:** Version bump only for package @userlike/messenger
