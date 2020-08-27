@@ -38,7 +38,7 @@ export interface EndOfLifeMessengerInfo<VersionId> {
   api: null;
 }
 
-export const enum VersionStatus {
+export enum VersionStatus {
   Supported = "supported",
   Deprecated = "deprecated",
   EndOfLife = "end-of-life",
