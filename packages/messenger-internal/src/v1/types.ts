@@ -60,6 +60,18 @@ export interface ApiActions {
   __unstableStartConversationWithOperator(
     operatorId: number
   ): Promise<ActionResult<string, void>>;
+
+  /**
+   * Experimental.
+   */
+  __unstableSetRegistration(
+    enabled: boolean
+  ): Promise<ActionResult<string, void>>;
+
+  /**
+   * Experimental.
+   */
+  __unstableSetProactive(enabled: boolean): Promise<ActionResult<string, void>>;
 }
 
 export interface State {
@@ -86,4 +98,9 @@ export interface Conversation {
 export interface Message {
   id: string;
 }
+
+export enum EnableRegistration {
+  Normal,
+  Registration,
+  Proactive,
 }
