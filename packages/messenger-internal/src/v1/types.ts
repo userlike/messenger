@@ -5,27 +5,6 @@ export interface Api extends ApiActions, ApiState {
   version: 1;
 }
 
-export enum UIState {
-  Hidden = "hidden",
-  Minimized = "minimized",
-  Maximized = "maximized",
-}
-
-export interface State {
-  ui: UIState;
-  conversations: Conversation[];
-}
-
-export interface Conversation {
-  id: number;
-  messages: Message[];
-  unread: Message[];
-}
-
-export interface Message {
-  id: string;
-}
-
 export interface ApiState {
   state$: Observable<State>;
   getState(): State;
@@ -81,4 +60,30 @@ export interface ApiActions {
   __unstableStartConversationWithOperator(
     operatorId: number
   ): Promise<ActionResult<string, void>>;
+}
+
+export interface State {
+  ui: UIState;
+  conversations: Conversation[];
+  contact: {
+    name: string | null;
+    email: string | null;
+  };
+}
+
+export enum UIState {
+  Hidden = "hidden",
+  Minimized = "minimized",
+  Maximized = "maximized",
+}
+
+export interface Conversation {
+  id: number;
+  messages: Message[];
+  unread: Message[];
+}
+
+export interface Message {
+  id: string;
+}
 }
