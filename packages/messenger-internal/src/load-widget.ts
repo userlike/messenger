@@ -1,5 +1,8 @@
 import type { ActionResult } from "./ActionResult";
-import type { AllApis } from "./types";
+import type { MessengerInfo } from "./types";
+import type * as v0 from "./v0";
+import type * as v1 from "./v1";
+import { VersionedApi } from "./versioning";
 
 const EVENT_NAME = "userlike:messenger:script";
 
@@ -107,11 +110,26 @@ export interface WidgetLoader {
   config: unknown;
 
   load: (opts?: LegacyOptions) => Promise<void>;
-  createMessenger: (
-    version: number
-  ) => (
+
+  createMessenger(
+    version: 0
+  ): (
     settings: WidgetLoaderSettings
-  ) => Promise<ActionResult<string, AllApis>>;
+  ) => Promise<ActionResult<string, MessengerInfo<0, v0.Api>>>;
+
+  createMessenger(
+    version: 1
+  ): (
+    settings: WidgetLoaderSettings
+  ) => Promise<ActionResult<string, MessengerInfo<1, v1.Api>>>;
+
+  createMessenger(
+    version: number
+  ): (
+    settings: WidgetLoaderSettings
+  ) => Promise<
+    ActionResult<string, MessengerInfo<number, VersionedApi<number>>>
+  >;
 }
 
 type CustomWindow = Window &

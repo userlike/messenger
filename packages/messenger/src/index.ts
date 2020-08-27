@@ -1,15 +1,30 @@
 import {
-  CreateMessenger,
   ActionResult,
-  AllApis,
   loadWidget,
+  MessengerOptions,
+  VersionedApi,
+  MessengerInfo,
+  v0,
+  v1,
 } from "@userlike/messenger-internal";
 
 export * from "@userlike/messenger-internal";
 
-export const createMessenger: CreateMessenger = async (
-  opts
-): Promise<ActionResult<string, AllApis>> => {
+export async function createMessenger(
+  opts: MessengerOptions<0>
+): Promise<ActionResult<string, MessengerInfo<0, v0.Api>>>;
+
+export async function createMessenger(
+  opts: MessengerOptions<0>
+): Promise<ActionResult<string, MessengerInfo<1, v1.Api>>>;
+
+export async function createMessenger(
+  opts: MessengerOptions<number>
+): Promise<ActionResult<string, MessengerInfo<number, VersionedApi<number>>>>;
+
+export async function createMessenger(
+  opts: MessengerOptions<number>
+): Promise<ActionResult<string, MessengerInfo<number, VersionedApi<number>>>> {
   const { createMessenger, widget_key, config } = await loadWidget(
     window,
     opts.widgetKey,
@@ -20,4 +35,4 @@ export const createMessenger: CreateMessenger = async (
     widget_key,
     config,
   });
-};
+}
