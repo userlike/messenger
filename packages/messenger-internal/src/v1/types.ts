@@ -14,7 +14,7 @@ export interface ApiActions {
   /**
    * Create the messenger.
    */
-  mount(): Promise<ActionResult<string, void>>;
+  mount(opts?: MountOptions): Promise<ActionResult<string, void>>;
 
   /**
    * Destroy the messenger.
@@ -112,4 +112,14 @@ export enum EnableRegistration {
   Normal,
   Registration,
   Proactive,
+}
+
+interface MountOptions {
+  __unstableUI?: __UnstableUIConfiguration;
+}
+
+interface __UnstableUIConfiguration {
+  main?: boolean;
+  button?: boolean;
+  notifications?: boolean;
 }
