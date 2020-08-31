@@ -12,19 +12,28 @@ export interface ApiState {
 
 export interface ApiActions {
   /**
-   * Render the messenger.
-   *
-   * Messenger must not be mounted.
+   * Create the messenger.
    */
   mount(): Promise<ActionResult<string, void>>;
 
   /**
-   * Remove the messenger.
-   *
-   * Messenger must be mounted.
+   * Destroy the messenger.
    */
   unmount(): Promise<ActionResult<string, void>>;
 
+  /**
+   * If the messenger is hidden, show it.
+   */
+  show(): Promise<ActionResult<string, void>>;
+
+  /**
+   * Hide the messenger.
+   */
+  hide(): Promise<ActionResult<string, void>>;
+
+  /**
+   * Delete contact's session and restart messenger.
+   */
   logout(): Promise<ActionResult<string, void>>;
 
   /**
