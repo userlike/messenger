@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.0](https://github.com/userlike/messenger/compare/v0.1.0-alpha.6...v1.0.0-rc.0) (2020-08-31)
+
+
+### Bug Fixes
+
+* fix version mismatch in createMessenger types ([f343cb1](https://github.com/userlike/messenger/commit/f343cb1f4bb9c8918e06d954136381aafa2d2cc4))
+
+
+
+
+
 # [0.1.0-alpha.6](https://github.com/userlike/messenger/compare/v0.1.0-alpha.5...v0.1.0-alpha.6) (2020-08-31)
 
 **Note:** Version bump only for package @userlike/messenger
