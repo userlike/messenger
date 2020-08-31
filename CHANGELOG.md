@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.6](https://github.com/userlike/messenger/compare/v0.1.0-alpha.5...v0.1.0-alpha.6) (2020-08-31)
+
+
+### Features
+
+* introduce experimental ui config option ([47b9ed7](https://github.com/userlike/messenger/commit/47b9ed78bd8d96382018fbdd3e3b555707fcda6c))
+* introduce show/hide, separate from mount/unmount ([1d976a1](https://github.com/userlike/messenger/commit/1d976a18c4ed695b7ca459777d4d6f13344b6ada))
+
+
+
+
+
 # [0.1.0-alpha.5](https://github.com/userlike/messenger/compare/v0.1.0-alpha.4...v0.1.0-alpha.5) (2020-08-27)
 
 
