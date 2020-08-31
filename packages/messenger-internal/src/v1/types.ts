@@ -44,6 +44,11 @@ export interface ApiActions {
   maximize(): Promise<ActionResult<string, void>>;
 
   /**
+   * Simulate as if the contact clicked the minimize button.
+   */
+  minimize(): Promise<ActionResult<string, void>>;
+
+  /**
    * Set custom data.
    */
   setCustomData(
