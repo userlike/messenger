@@ -84,7 +84,7 @@ export interface ApiActions {
 }
 
 export interface State {
-  ui: UIState;
+  visibility: Visibility;
   conversations: Conversation[];
   contact: {
     name: string | null;
@@ -92,7 +92,7 @@ export interface State {
   };
 }
 
-export enum UIState {
+export enum Visibility {
   Hidden = "hidden",
   Minimized = "minimized",
   Maximized = "maximized",
@@ -100,8 +100,8 @@ export enum UIState {
 
 export interface Conversation {
   id: number;
-  messages: Message[];
   unread: Message[];
+  __unstableMessages: Message[];
 }
 
 export interface Message {
@@ -115,10 +115,10 @@ export enum EnableRegistration {
 }
 
 interface MountOptions {
-  __unstableUI?: __UnstableUIConfiguration;
+  __unstableVisibility?: VisibilityConfiguration;
 }
 
-interface __UnstableUIConfiguration {
+interface VisibilityConfiguration {
   main?: boolean;
   button?: boolean;
   notifications?: boolean;
