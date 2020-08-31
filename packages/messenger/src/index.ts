@@ -15,7 +15,7 @@ export async function createMessenger(
 ): Promise<ActionResult<string, MessengerInfo<0, v0.Api>>>;
 
 export async function createMessenger(
-  opts: MessengerOptions<0>
+  opts: MessengerOptions<1>
 ): Promise<ActionResult<string, MessengerInfo<1, v1.Api>>>;
 
 export async function createMessenger(
