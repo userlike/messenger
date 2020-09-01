@@ -14,22 +14,16 @@ export interface ApiActions {
   /**
    * Create the messenger.
    */
-  mount(opts?: MountOptions): Promise<ActionResult<string, void>>;
+  mount(): Promise<ActionResult<string, void>>;
 
   /**
    * Destroy the messenger.
    */
   unmount(): Promise<ActionResult<string, void>>;
 
-  /**
-   * If the messenger is hidden, show it.
-   */
-  show(): Promise<ActionResult<string, void>>;
-
-  /**
-   * Hide the messenger.
-   */
-  hide(): Promise<ActionResult<string, void>>;
+  setVisibility(
+    conf: VisibilityConfiguration
+  ): Promise<ActionResult<string, void>>;
 
   /**
    * Delete contact's session and restart messenger.
@@ -89,7 +83,7 @@ export interface ApiActions {
 }
 
 export interface State {
-  visibility: Visibility;
+  state: MessengerState;
   conversations: Conversation[];
   contact: {
     name: string | null;
@@ -97,7 +91,7 @@ export interface State {
   };
 }
 
-export enum Visibility {
+export enum MessengerState {
   Hidden = "hidden",
   Minimized = "minimized",
   Maximized = "maximized",
@@ -119,12 +113,8 @@ export enum EnableRegistration {
   Proactive,
 }
 
-interface MountOptions {
-  __unstableVisibility?: VisibilityConfiguration;
-}
-
-interface VisibilityConfiguration {
-  main?: boolean;
-  button?: boolean;
-  notifications?: boolean;
+export interface VisibilityConfiguration {
+  main: boolean;
+  button: boolean;
+  notifications: boolean;
 }
