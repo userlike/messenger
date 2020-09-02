@@ -4,10 +4,6 @@
 
 # Official Userlike Messenger API
 
-This is currently in alpha state and is not suggested for production use.
-
-Please be aware that during the alpha phase, there will be breaking changes without notice.
-
 ## Install
 
 ```
