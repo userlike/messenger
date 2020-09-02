@@ -2634,11 +2634,6 @@
   dependencies:
     eslint-visitor-keys "^1.1.0"
 
-"@userlike/messenger-types@^0.1.0-alpha.4":
-  version "0.1.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@userlike/messenger-types/-/messenger-types-0.1.0-alpha.4.tgz#8505b7fce47a27fc220fa21b6a42bea498866f4c"
-  integrity sha512-VGhfp5J0+8LQ/pkiO/HTgo0G8pNje6ZSv0LAofDNtZRZZun7bgwrGDQyNC5+m8OZ0sVBkAO558yQiRxzfvnc6A==
-
 "@zkochan/cmd-shim@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@zkochan/cmd-shim/-/cmd-shim-3.1.0.tgz#2ab8ed81f5bb5452a85f25758eb9b8681982fd2e"
