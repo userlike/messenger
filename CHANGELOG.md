@@ -3,6 +3,111 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/userlike/messenger/compare/v1.0.0-rc.4...v1.0.0) (2020-09-03)
+
+**Note:** Version bump only for package messenger
+
+
+
+
+
+# [1.0.0-rc.4](https://github.com/userlike/messenger/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2020-09-02)
+
+**Note:** Version bump only for package messenger
+
+
+
+
+
+# [1.0.0-rc.3](https://github.com/userlike/messenger/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2020-09-01)
+
+**Note:** Version bump only for package messenger
+
+
+
+
+
+# [1.0.0-rc.2](https://github.com/userlike/messenger/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2020-08-31)
+
+
+### Features
+
+* introduce minimize ([e803a17](https://github.com/userlike/messenger/commit/e803a17143c7a03df238686c72d1025ee34288c3))
+
+
+
+
+
+# [1.0.0-rc.1](https://github.com/userlike/messenger/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2020-08-31)
+
+**Note:** Version bump only for package messenger
+
+
+
+
+
+# [1.0.0-rc.0](https://github.com/userlike/messenger/compare/v0.1.0-alpha.6...v1.0.0-rc.0) (2020-08-31)
+
+
+### Bug Fixes
+
+* fix version mismatch in createMessenger types ([f343cb1](https://github.com/userlike/messenger/commit/f343cb1f4bb9c8918e06d954136381aafa2d2cc4))
+
+
+
+
+
+# [0.1.0-alpha.6](https://github.com/userlike/messenger/compare/v0.1.0-alpha.5...v0.1.0-alpha.6) (2020-08-31)
+
+
+### Features
+
+* introduce experimental ui config option ([47b9ed7](https://github.com/userlike/messenger/commit/47b9ed78bd8d96382018fbdd3e3b555707fcda6c))
+* introduce show/hide, separate from mount/unmount ([1d976a1](https://github.com/userlike/messenger/commit/1d976a18c4ed695b7ca459777d4d6f13344b6ada))
+
+
+
+
+
+# [0.1.0-alpha.5](https://github.com/userlike/messenger/compare/v0.1.0-alpha.4...v0.1.0-alpha.5) (2020-08-27)
+
+
+### Bug Fixes
+
+* make observer methods optional ([a16a745](https://github.com/userlike/messenger/commit/a16a7454789d493dd3e69131fffb56837b219e11))
+* make VersionStatus a non-const enum ([c03c1fc](https://github.com/userlike/messenger/commit/c03c1fcc2b1cbe4e3dd4b3b994c54f61eedefc8b))
+
+
+### Features
+
+* add \`conversations\` to State ([42a160c](https://github.com/userlike/messenger/commit/42a160c03ac9c1efc135313462e973ffc35c1282))
+* add contact info to exposed um state ([68921c3](https://github.com/userlike/messenger/commit/68921c350b9f36f15ee431b54d5feee6fdc5d2e4))
+* add experimental setRegistration and setProactive actions ([bbdf3e7](https://github.com/userlike/messenger/commit/bbdf3e7bb16acdb7e4beafbeb82c56bfd193cb02))
+* add legacy api as v0 ([935ace2](https://github.com/userlike/messenger/commit/935ace2beeb45cc9a1205add95d29ef5f9f62923))
+
+
+
+
+
+# [0.1.0-alpha.4](https://github.com/userlike/messenger/compare/v0.1.0-alpha.3...v0.1.0-alpha.4) (2020-08-25)
+
+**Note:** Version bump only for package messenger
+
+
+
+
+
+# [0.1.0-alpha.3](https://github.com/userlike/messenger/compare/v0.1.0-alpha.2...v0.1.0-alpha.3) (2020-08-25)
+
+
+### Features
+
+* add state$ and getState ([881d8f1](https://github.com/userlike/messenger/commit/881d8f14c945035ec82dafeeb77f37207f5b4f4c))
+
+
+
+
+
 # [0.1.0-alpha.2](https://github.com/userlike/messenger/compare/v0.1.0-alpha.1...v0.1.0-alpha.2) (2020-08-13)
 
 
