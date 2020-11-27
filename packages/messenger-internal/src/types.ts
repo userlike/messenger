@@ -24,3 +24,12 @@ export interface MessengerOptions<Version> {
    */
   baseUrl?: string;
 }
+
+export type Json = boolean | number | string | null | JsonArray | JsonRecord;
+
+export interface JsonRecord {
+  readonly [key: string]: Json;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface JsonArray extends ReadonlyArray<Json> {}
