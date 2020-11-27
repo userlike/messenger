@@ -1,5 +1,5 @@
 import type { ActionResult } from "./ActionResult";
-import type { MessengerInfo } from "./types";
+import type { MessengerInfo, Json } from "./types";
 import type * as v0 from "./v0";
 import type * as v1 from "./v1";
 import { VersionedApi } from "./versioning";
@@ -11,7 +11,7 @@ export async function loadWidget(
   widgetKey: string,
   baseUrl?: string
 ): Promise<WidgetLoader> {
-  const url = getUrl(widgetKey, baseUrl);
+  const url = getWidgetLoaderUrl(widgetKey, baseUrl);
   setPureLoader(widgetKey);
 
   return new Promise<WidgetLoader>((resolve, reject) => {
@@ -46,6 +46,37 @@ export async function loadWidget(
   });
 }
 
+export async function loadAssetsManifest(baseUrl?: string): Promise<Json> {
+  const url = getManifestUrl(baseUrl);
+
+  const response = await fetch(url, {
+    mode: "cors",
+  });
+
+  if (response.ok) {
+    return response.json();
+  } else {
+    return Promise.reject(new Error(response.statusText));
+  }
+}
+
+export async function loadWidgetConfig(
+  widgetKey: string,
+  baseUrl?: string
+): Promise<Json> {
+  const url = getConfigUrl(widgetKey, baseUrl);
+
+  const response = await fetch(url, {
+    mode: "cors",
+  });
+
+  if (response.ok) {
+    return response.json();
+  } else {
+    return Promise.reject(new Error(response.statusText));
+  }
+}
+
 export const notifyScriptLoad = (
   payload: ActionResult<{ widget_key: string }, WidgetLoader>,
   target: EventTarget = window
@@ -64,12 +95,27 @@ type Dictionary<K extends keyof any, T> = {
 
 declare const process: { env: Dictionary<string, string> };
 
-function getUrl(
+function getWidgetLoaderUrl(
   sha256: string,
   baseUrl = process.env.USERLIKE_WIDGET_URL ??
     "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com"
 ) {
   return `${baseUrl}/${sha256}.js`;
+}
+
+function getConfigUrl(
+  widgetKey: string,
+  baseUrl = process.env.USERLIKE_WIDGET_URL ??
+    "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com"
+) {
+  return `${baseUrl}/${widgetKey}.json`;
+}
+
+function getManifestUrl(
+  baseUrl = process.env.USERLIKE_WIDGET_URL ??
+    "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com"
+) {
+  return `${baseUrl}/umm.json`;
 }
 
 function isScriptEvent(
