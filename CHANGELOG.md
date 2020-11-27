@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.0](https://github.com/userlike/messenger/compare/v1.0.0...v1.1.0-alpha.0) (2020-11-27)
+
+
+### Features
+
+* **internal:** add loadWidgetConfig & loadAssetsManifest ([0b1071f](https://github.com/userlike/messenger/commit/0b1071f18d67acfa96218c166d2abdbc16ab4da3))
+
+
+
+
+
 # [1.0.0](https://github.com/userlike/messenger/compare/v1.0.0-rc.4...v1.0.0) (2020-09-03)
 
 **Note:** Version bump only for package messenger
