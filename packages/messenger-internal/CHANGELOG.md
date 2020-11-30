@@ -3,6 +3,116 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.0.0-alpha.0 (2020-11-30)
+
+
+### Code Refactoring
+
+* drop config from WidgetLoaderSettings ([19485d5](https://github.com/userlike/messenger/commit/19485d5dee32f5c617b064d7ad99a46a3b9fdbee))
+
+
+### BREAKING CHANGES
+
+* WidgetLoaderSettings doesn't have a config property anymore.
+
+
+
+# 1.1.0-alpha.0 (2020-11-27)
+
+
+### Features
+
+* **internal:** add loadWidgetConfig & loadAssetsManifest ([0b1071f](https://github.com/userlike/messenger/commit/0b1071f18d67acfa96218c166d2abdbc16ab4da3))
+
+
+
+# 1.0.0 (2020-09-03)
+
+
+
+# 1.0.0-rc.4 (2020-09-02)
+
+
+
+# 1.0.0-rc.3 (2020-09-01)
+
+
+
+# 1.0.0-rc.2 (2020-08-31)
+
+
+### Features
+
+* introduce minimize ([e803a17](https://github.com/userlike/messenger/commit/e803a17143c7a03df238686c72d1025ee34288c3))
+
+
+
+# 1.0.0-rc.1 (2020-08-31)
+
+
+
+# 1.0.0-rc.0 (2020-08-31)
+
+
+
+# 0.1.0-alpha.6 (2020-08-31)
+
+
+### Features
+
+* introduce experimental ui config option ([47b9ed7](https://github.com/userlike/messenger/commit/47b9ed78bd8d96382018fbdd3e3b555707fcda6c))
+* introduce show/hide, separate from mount/unmount ([1d976a1](https://github.com/userlike/messenger/commit/1d976a18c4ed695b7ca459777d4d6f13344b6ada))
+
+
+
+# 0.1.0-alpha.5 (2020-08-27)
+
+
+### Bug Fixes
+
+* make VersionStatus a non-const enum ([c03c1fc](https://github.com/userlike/messenger/commit/c03c1fcc2b1cbe4e3dd4b3b994c54f61eedefc8b))
+
+
+### Features
+
+* add contact info to exposed um state ([68921c3](https://github.com/userlike/messenger/commit/68921c350b9f36f15ee431b54d5feee6fdc5d2e4))
+* add experimental setRegistration and setProactive actions ([bbdf3e7](https://github.com/userlike/messenger/commit/bbdf3e7bb16acdb7e4beafbeb82c56bfd193cb02))
+* add legacy api as v0 ([935ace2](https://github.com/userlike/messenger/commit/935ace2beeb45cc9a1205add95d29ef5f9f62923))
+
+
+
+# 0.1.0-alpha.4 (2020-08-25)
+
+
+
+# 0.1.0-alpha.3 (2020-08-25)
+
+
+
+# 0.1.0-alpha.2 (2020-08-13)
+
+
+### Bug Fixes
+
+* improve error handling of widget loading ([c1870f8](https://github.com/userlike/messenger/commit/c1870f8c429efffae558a339c02b16b10a49e4d3))
+
+
+
+# 0.1.0-alpha.1 (2020-08-13)
+
+
+### Bug Fixes
+
+* reduce the chance of multiple messengers conflicting with each other ([e7bc350](https://github.com/userlike/messenger/commit/e7bc350bee9ef10a2faede0d14b09df8321866c7))
+
+
+
+# 0.1.0-alpha.0 (2020-08-06)
+
+
+
+
+
 # [1.1.0-alpha.0](https://github.com/userlike/messenger/compare/v1.0.0...v1.1.0-alpha.0) (2020-11-27)
 
 
