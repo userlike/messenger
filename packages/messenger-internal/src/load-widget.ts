@@ -145,7 +145,6 @@ export interface LegacyOptions {
 
 export interface WidgetLoaderSettings {
   widget_key: string;
-  config: unknown;
 }
 
 /**
