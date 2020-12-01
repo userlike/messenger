@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.0.0-alpha.0...@userlike/messenger-internal@2.0.0-alpha.1) (2020-12-01)
+
+
+### Code Refactoring
+
+* impl asset loading from umm manifest ([0fc4da1](https://github.com/userlike/messenger/commit/0fc4da1b6b0e11bca486927ec1e2e0c7f4c3a7b3))
+
+
+### BREAKING CHANGES
+
+* The way UMM scripts are loaded has significantly changed.
+
+
+
+
+
 # 2.0.0-alpha.0 (2020-11-30)
 
 
