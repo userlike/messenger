@@ -1,6 +1,6 @@
 import {
   ActionResult,
-  loadWidget,
+  loadScripts,
   MessengerOptions,
   VersionedApi,
   MessengerInfo,
@@ -34,13 +34,13 @@ export async function createMessenger(
 export async function createMessenger(
   opts: MessengerOptions<number>
 ): Promise<ActionResult<string, MessengerInfo<number, VersionedApi<number>>>> {
-  const { createMessenger, widget_key } = await loadWidget(
+  const { createMessenger } = await loadScripts(
     window,
     opts.widgetKey,
     opts.baseUrl
   );
 
   return createMessenger(opts.version)({
-    widget_key,
+    widget_key: opts.widgetKey,
   });
 }
