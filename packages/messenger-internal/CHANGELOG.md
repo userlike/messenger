@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.5](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.0.0-alpha.4...@userlike/messenger-internal@2.0.0-alpha.5) (2020-12-02)
+
+
+### Features
+
+* allow reporting of original errors for script load events ([67959be](https://github.com/userlike/messenger/commit/67959be40a0b7d4efc56babbc8a07f7cddbae043))
+
+
+
+
+
 # [2.0.0-alpha.4](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.0.0-alpha.3...@userlike/messenger-internal@2.0.0-alpha.4) (2020-12-01)
 
 **Note:** Version bump only for package @userlike/messenger-internal
