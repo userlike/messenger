@@ -12,7 +12,7 @@ const EVENT_NAME = "userlike:messenger:script";
  * @deprecated
  */
 export const notifyScriptLoad = (
-  payload: ActionResult<{ widget_key: string }, WidgetLoader>,
+  payload: ActionResult<{ widget_key: string; original?: Error }, WidgetLoader>,
   target: EventTarget = window
 ): void => {
   target.dispatchEvent(
