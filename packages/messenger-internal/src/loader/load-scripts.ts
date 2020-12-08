@@ -22,11 +22,6 @@ export function loadScripts(
           return Promise.reject(new Error("iframe did not initialize"));
         }
 
-        addScript(
-          contentDocument,
-          "__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;"
-        );
-
         const lastIdx = manifest.length - 1;
         manifest.slice(0, lastIdx).forEach((script) => {
           addScriptSrc(contentDocument, script);
@@ -41,13 +36,6 @@ export function loadScripts(
         });
       })
   );
-}
-
-function addScript(doc: Document, script: string) {
-  const el = doc.createElement("script");
-  el.async = false;
-  el.appendChild(doc.createTextNode(script));
-  doc.body.appendChild(el);
 }
 
 function addScriptSrc(doc: Document, href: string, onLoad?: () => void) {
