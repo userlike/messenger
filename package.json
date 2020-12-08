@@ -21,6 +21,6 @@
     "prepare": "mklib prepare"
   },
   "devDependencies": {
-    "@anilanar/mklib": "^1.0.9"
+    "@anilanar/mklib": "^2.0.2"
   }
 }
