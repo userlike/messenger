@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2021-01-26)
+
+
+
+# 1.0.0 (2020-09-03)
+
+
+
+# 1.0.0-rc.4 (2020-09-02)
+
+
+
+# 1.0.0-rc.3 (2020-09-01)
+
+
+
+# 1.0.0-rc.2 (2020-08-31)
+
+
+
+# 1.0.0-rc.1 (2020-08-31)
+
+
+
+# 1.0.0-rc.0 (2020-08-31)
+
+
+### Bug Fixes
+
+* fix version mismatch in createMessenger types ([f343cb1](https://github.com/userlike/messenger/commit/f343cb1f4bb9c8918e06d954136381aafa2d2cc4))
+
+
+
+# 0.1.0-alpha.6 (2020-08-31)
+
+
+
+# 0.1.0-alpha.5 (2020-08-27)
+
+
+### Features
+
+* add legacy api as v0 ([935ace2](https://github.com/userlike/messenger/commit/935ace2beeb45cc9a1205add95d29ef5f9f62923))
+
+
+
+# 0.1.0-alpha.4 (2020-08-25)
+
+
+
+# 0.1.0-alpha.3 (2020-08-25)
+
+
+
+# 0.1.0-alpha.2 (2020-08-13)
+
+
+
+# 0.1.0-alpha.1 (2020-08-13)
+
+
+
+# 0.1.0-alpha.0 (2020-08-06)
+
+
+
+
+
 # [1.1.0-alpha.6](https://github.com/userlike/messenger/compare/@userlike/messenger@1.1.0-alpha.5...@userlike/messenger@1.1.0-alpha.6) (2020-12-02)
 
 **Note:** Version bump only for package @userlike/messenger
