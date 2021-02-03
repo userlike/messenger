@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.0.0...@userlike/messenger-internal@2.0.1) (2021-02-03)
+
+
+### Bug Fixes
+
+* **internal:** drop process.env usage ([3012551](https://github.com/userlike/messenger/commit/3012551b1a906c75770c75af4be3fd33088cc56a)), closes [#12](https://github.com/userlike/messenger/issues/12)
+
+
+
+
+
 # 2.0.0 (2021-01-26)
 
 
