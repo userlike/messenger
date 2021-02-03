@@ -93,16 +93,14 @@ type Dictionary<K extends keyof any, T> = {
 declare const process: { env: Dictionary<string, string> };
 
 function getManifestUrl(
-  baseUrl = process.env.USERLIKE_WIDGET_URL ??
-    "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com"
+  baseUrl = "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com"
 ) {
   return `${baseUrl}/umm-manifest.json`;
 }
 
 function getConfigUrl(
   widgetKey: string,
-  baseUrl = process.env.USERLIKE_WIDGET_URL ??
-    "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com"
+  baseUrl = "https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com"
 ) {
   return `${baseUrl}/${widgetKey}.json`;
 }
