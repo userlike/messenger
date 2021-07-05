@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger@1.1.1...@userlike/messenger@1.2.0-alpha.0) (2021-07-05)
+
+
+### Features
+
+* **messenger:** add browser compatible dist file ([05b6126](https://github.com/userlike/messenger/commit/05b612696ffa574d836ee24cbf9514e35e29df71)), closes [#14](https://github.com/userlike/messenger/issues/14)
+
+
+
+
+
 ## [1.1.1](https://github.com/userlike/messenger/compare/@userlike/messenger@1.1.0...@userlike/messenger@1.1.1) (2021-02-03)
 
 **Note:** Version bump only for package @userlike/messenger
