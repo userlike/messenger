@@ -3,6 +3,7 @@
   "version": "1.1.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
+  "browser": "dist/browser/index.min.js",
   "types": "dist/es/index.d.ts",
   "sideEffects": false,
   "homepage": "https://github.com/userlike/messenger",
@@ -17,8 +18,11 @@
     "dist/cjs"
   ],
   "scripts": {
-    "build": "tsc",
+    "prebuild": "yarn clean",
+    "build": "yarn build:es && yarn build:cjs && yarn build:browser",
+    "build:es": "tsc",
     "build:cjs": "tsc -b tsconfig.cjs.json",
+    "build:browser": "webpack -c webpack.config.js",
     "clean": "rm -rf dist",
     "lint": "eslint src --ext .ts",
     "test": "jest"

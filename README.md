@@ -10,6 +10,12 @@
 npm install @userlike/messenger
 ```
 
+## Usage
+
+If you are using a bundler such as webpack, browserify, parcel etc, it's as simple as importing `@userlike/messenger` as done by examples below.
+
+If you want to use it in the browser without bundling, you can load `dist/browser/index.min.js` using a `<script>` element and then use it like `window.userlikeMessenger.createMessenger({ ... })` instead of importing.
+
 ## Examples
 
 ### Create the API
