@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0-alpha.1](https://github.com/userlike/messenger/compare/@userlike/messenger@1.2.0-alpha.0...@userlike/messenger@1.2.0-alpha.1) (2021-07-05)
+
+
+### Bug Fixes
+
+* **messenger:** add browser dist file to published list of files ([d73b131](https://github.com/userlike/messenger/commit/d73b13169a21850116ca732da90b088204d86445))
+
+
+
+
+
 # [1.2.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger@1.1.1...@userlike/messenger@1.2.0-alpha.0) (2021-07-05)
 
 
