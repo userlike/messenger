@@ -12,9 +12,38 @@ npm install @userlike/messenger
 
 ## Usage
 
-If you are using a bundler such as webpack, browserify, parcel etc, it's as simple as importing `@userlike/messenger` as done by examples below.
+See [examples](#examples) for further details on how to use `createMessenger`.
 
-If you want to use it in the browser without bundling, you can load `dist/browser/index.min.js` using a `<script>` element and then use it like `window.userlikeMessenger.createMessenger({ ... })` instead of importing.
+### ES modules
+
+```js
+import { createMessenger } from '@userlike/messenger';
+```
+
+### commonjs
+
+```js
+const { createMessenger } = require('@userlike/messenger');
+```
+
+### AMD loader (requirejs)
+
+```js
+require(['userlike-messenger'], function (userlike) {
+  userlike.createMessenger({ ... });
+});
+```
+
+### script tag
+
+```html
+<script src="https://unpkg.com/@userlike/messenger/dist/browser/index.min.js"></script>
+<script>
+  UserlikeMessenger.createMessenger({ ... });
+</script>
+```
+
+------
 
 ## Examples
 
