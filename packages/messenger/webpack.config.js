@@ -10,7 +10,16 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist/browser"),
     filename: "index.min.js",
-    library: "userlikeMessenger",
+    library: {
+      name: {
+        root: "UserlikeMessenger",
+        commonjs: "messenger",
+        amd: "userlike-messenger",
+      },
+      type: "umd",
+      umdNamedDefine: true,
+    },
+    globalObject: `typeof window !== 'undefined' ? window : this`,
   },
 };
 
