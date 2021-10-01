@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.0.2...@userlike/messenger-internal@2.1.0) (2021-10-01)
+
+
+### Features
+
+* increase iframe accessibility ([1d861d5](https://github.com/userlike/messenger/commit/1d861d52be0d236033a6060757d3490c46d92c65))
+
+
+
+
+
 ## [2.0.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.0.1...@userlike/messenger-internal@2.0.2) (2021-07-06)
 
 **Note:** Version bump only for package @userlike/messenger-internal
