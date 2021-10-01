@@ -3,6 +3,9 @@ import { uniqueId } from "./unique-id";
 export const createIFrame = async (): Promise<HTMLIFrameElement> => {
   const iframe = document.createElement("iframe");
   iframe.id = `userlike-frame-${uniqueId()}`;
+  iframe.title = 'Empty frame';
+  iframe.setAttribute('aria-hidden', 'true');
+  iframe.tabIndex = -1;
   iframe.setAttribute(
     "style",
     `
@@ -19,6 +22,7 @@ export const createIFrame = async (): Promise<HTMLIFrameElement> => {
 
   return new Promise<HTMLIFrameElement>((resolve) => {
     iframe.addEventListener("load", () => resolve(iframe));
+    document.title = 'Empty frame';
     document.body.appendChild(iframe);
   });
 };
