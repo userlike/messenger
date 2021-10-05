@@ -22,7 +22,6 @@ export const createIFrame = async (): Promise<HTMLIFrameElement> => {
 
   return new Promise<HTMLIFrameElement>((resolve) => {
     iframe.addEventListener("load", () => resolve(iframe));
-    document.title = 'Empty frame';
     document.body.appendChild(iframe);
   });
 };
