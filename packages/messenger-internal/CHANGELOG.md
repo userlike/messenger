@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.1.0...@userlike/messenger-internal@2.1.1) (2021-10-05)
+
+
+### Bug Fixes
+
+* fix accidental take-over of document title ([ba1829d](https://github.com/userlike/messenger/commit/ba1829d77dfc49112105d92f87f4f64390ee127f))
+
+
+
+
+
 # [2.1.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.0.2...@userlike/messenger-internal@2.1.0) (2021-10-01)
 
 
