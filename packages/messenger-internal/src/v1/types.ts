@@ -10,11 +10,18 @@ export interface ApiState {
   getState(): State;
 }
 
+export interface AuthParams {
+  token: string;
+  uuid: string;
+}
+
 export interface ApiActions {
   /**
    * Create the messenger.
    */
-  mount(): Promise<ActionResult<string, void>>;
+  mount(opts?:  {
+    credentials?: AuthParams;
+  }): Promise<ActionResult<string, void>>;
 
   /**
    * Destroy the messenger.
