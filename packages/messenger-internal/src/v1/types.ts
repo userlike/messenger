@@ -33,6 +33,9 @@ export interface ApiActions {
    */
   consumeToken(token: string): Promise<ActionResult<string, AuthParams>>;
 
+  /**
+   * Control the visibility of messenger features.
+   */
   setVisibility(
     conf: VisibilityConfiguration
   ): Promise<ActionResult<string, void>>;
