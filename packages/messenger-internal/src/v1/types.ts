@@ -83,6 +83,14 @@ export interface ApiActions {
 
   /**
    * Experimental.
+   * Opens a conversation by id.
+   */
+   __unstableOpenConversation(
+    id: number
+  ): Promise<ActionResult<string, void>>;
+
+  /**
+   * Experimental.
    */
   __unstableSetRegistration(
     enabled: boolean
