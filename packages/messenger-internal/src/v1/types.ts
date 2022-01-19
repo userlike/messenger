@@ -21,6 +21,11 @@ export interface ApiActions {
    */
   unmount(): Promise<ActionResult<string, void>>;
 
+  /**
+   * Consumes a short living token to returns long living AuthParams.
+   */
+  consumeToken(token: string): Promise<ActionResult<string, AuthParams>>;
+
   setVisibility(
     conf: VisibilityConfiguration
   ): Promise<ActionResult<string, void>>;
