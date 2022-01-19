@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.1.1...@userlike/messenger-internal@2.2.0-alpha.0) (2022-01-19)
+
+
+### Features
+
+* add consumeToken to v1 api ([e9ab784](https://github.com/userlike/messenger/commit/e9ab7847a2d5cd843f17e6eb4ecf93a196fce938))
+* add experimental __unstableOpenConversation to v1 api ([f1e6a76](https://github.com/userlike/messenger/commit/f1e6a76da725579b94adb7afd0fedf236b54b30c))
+* add support for an optional credentials param to v1 api mount ([aad2b7a](https://github.com/userlike/messenger/commit/aad2b7a98de4e65cb1525f60c0fcc3ddaab50b9e))
+
+
+
+
+
 ## [2.1.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.1.0...@userlike/messenger-internal@2.1.1) (2021-10-05)
 
 
