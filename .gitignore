@@ -3,3 +3,4 @@ dist
 tsconfig.tsbuildinfo
 yarn-error.log
 lerna-debug.log
+.vscode
