@@ -10,13 +10,13 @@ export interface ApiState {
   getState(): State;
 }
 
-export interface AuthParams {
+export interface Credentials {
   token: string;
   uuid: string;
 }
 
-export interface MountOps {
-  credentials?: AuthParams;
+export interface MountOptions {
+  credentials?: Credentials;
   openConversationId?: number;
 }
 
@@ -24,7 +24,7 @@ export interface ApiActions {
   /**
    * Create the messenger.
    */
-  mount(opts?: MountOps): Promise<ActionResult<string, void>>;
+  mount(opts?: MountOptions): Promise<ActionResult<string, void>>;
 
   /**
    * Destroy the messenger.
@@ -34,7 +34,7 @@ export interface ApiActions {
   /**
    * Consumes a short living token to returns long living AuthParams.
    */
-  consumeToken(token: string): Promise<ActionResult<string, AuthParams>>;
+  consumeToken(token: string): Promise<ActionResult<string, Credentials>>;
 
   /**
    * Control the visibility of messenger features.
