@@ -15,13 +15,16 @@ export interface AuthParams {
   uuid: string;
 }
 
+export interface MountOps {
+  credentials?: AuthParams;
+  openConversationId?: number;
+}
+
 export interface ApiActions {
   /**
    * Create the messenger.
    */
-  mount(opts?:  {
-    credentials?: AuthParams;
-  }): Promise<ActionResult<string, void>>;
+  mount(opts?: MountOps): Promise<ActionResult<string, void>>;
 
   /**
    * Destroy the messenger.
