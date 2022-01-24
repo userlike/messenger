@@ -32,11 +32,6 @@ export interface ApiActions {
   unmount(): Promise<ActionResult<string, void>>;
 
   /**
-   * Consumes a short living token to returns long living AuthParams.
-   */
-  consumeToken(token: string): Promise<ActionResult<string, Credentials>>;
-
-  /**
    * Control the visibility of messenger features.
    */
   setVisibility(
@@ -74,6 +69,12 @@ export interface ApiActions {
     name?: string;
     email?: string;
   }): Promise<ActionResult<string, void>>;
+
+  /**
+   * Experimental.
+   * Consumes a short living token to returns long living AuthParams.
+   */
+   __unstableConsumeToken(token: string): Promise<ActionResult<string, Credentials>>;
 
   /**
    * Experimental.
