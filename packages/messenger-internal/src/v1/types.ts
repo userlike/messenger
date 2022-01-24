@@ -23,6 +23,8 @@ export interface MountOptions {
 export interface ApiActions {
   /**
    * Create the messenger.
+   * When credentials are provided those will be used for authentication.
+   * When openConversationId is passed that conversation will be opened after successful authentication.
    */
   mount(opts?: MountOptions): Promise<ActionResult<string, void>>;
 
