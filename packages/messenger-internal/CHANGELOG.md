@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0-alpha.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.2.0-alpha.1...@userlike/messenger-internal@2.2.0-alpha.2) (2022-01-25)
+
+
+### Bug Fixes
+
+* remove mention of AuthParams ([a621317](https://github.com/userlike/messenger/commit/a6213170ad5f74bcffe02bdaf398229cbc048a62))
+
+
+### Features
+
+* add openConversationId to mount options ([4a2af88](https://github.com/userlike/messenger/commit/4a2af88d7075c7fa673b27d9737980984b6de75d))
+
+
+
+
+
 # [2.2.0-alpha.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.2.0-alpha.0...@userlike/messenger-internal@2.2.0-alpha.1) (2022-01-19)
 
 **Note:** Version bump only for package @userlike/messenger-internal
