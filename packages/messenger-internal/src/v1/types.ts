@@ -74,7 +74,7 @@ export interface ApiActions {
 
   /**
    * Experimental.
-   * Consumes a short living token to returns long living AuthParams.
+   * Consumes a short living token to returns long living Credentials.
    */
    __unstableConsumeToken(token: string): Promise<ActionResult<string, Credentials>>;
 
