@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0-alpha.3](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.1.1...@userlike/messenger-internal@2.2.0-alpha.3) (2022-02-09)
+
+
+### Bug Fixes
+
+* remove mention of AuthParams ([8fde53c](https://github.com/userlike/messenger/commit/8fde53c4662eadc5ec0c7cc2219d0f0c0045dd0e))
+
+
+### Features
+
+* add consumeToken to v1 api ([a2ad6c4](https://github.com/userlike/messenger/commit/a2ad6c463f555496346990df6f72da4e03dbbc86))
+* add experimental __unstableOpenConversation to v1 api ([71af30e](https://github.com/userlike/messenger/commit/71af30e3147e02987fcae964c9517a60c58cc22c))
+* add new contact form fields ([e910e41](https://github.com/userlike/messenger/commit/e910e414a1f1b56d65745e766912652668a05c28))
+* add openConversationId to mount options ([07e7d45](https://github.com/userlike/messenger/commit/07e7d45f9598088bba7f90f0bfe40addf5c567d5))
+* add support for an optional credentials param to v1 api mount ([9a62ce4](https://github.com/userlike/messenger/commit/9a62ce4f4eb583560bf99af1bd6b2ad0e5589c38))
+
+
+
+
+
 # [2.2.0-alpha.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.2.0-alpha.1...@userlike/messenger-internal@2.2.0-alpha.2) (2022-01-25)
 
 
