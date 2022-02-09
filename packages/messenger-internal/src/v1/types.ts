@@ -65,16 +65,17 @@ export interface ApiActions {
   /**
    * Set contact info.
    */
-  setContactInfo(data: {
-    name?: string;
-    email?: string;
-  }): Promise<ActionResult<string, void>>;
+  setContactInfo(
+    data: Partial<ContactInfo>
+  ): Promise<ActionResult<string, void>>;
 
   /**
    * Experimental.
    * Consumes a short living token to returns long living Credentials.
    */
-   __unstableConsumeToken(token: string): Promise<ActionResult<string, Credentials>>;
+  __unstableConsumeToken(
+    token: string
+  ): Promise<ActionResult<string, Credentials>>;
 
   /**
    * Experimental.
@@ -92,9 +93,7 @@ export interface ApiActions {
    * Experimental.
    * Opens a conversation by id.
    */
-   __unstableOpenConversation(
-    id: number
-  ): Promise<ActionResult<string, void>>;
+  __unstableOpenConversation(id: number): Promise<ActionResult<string, void>>;
 
   /**
    * Experimental.
@@ -112,10 +111,7 @@ export interface ApiActions {
 export interface State {
   state: MessengerState;
   conversations: Conversation[];
-  contact: {
-    name: string | null;
-    email: string | null;
-  };
+  contact: ContactInfo;
 }
 
 export enum MessengerState {
@@ -128,6 +124,15 @@ export interface Conversation {
   id: number;
   unread: Message[];
   __unstableMessages: Message[];
+}
+
+export interface ContactInfo {
+  name: string | null;
+  email: string | null;
+  phone_number: string | null;
+  mobile_number: string | null;
+  company: string | null;
+  external_customer_id: string | null;
 }
 
 export interface Message {
