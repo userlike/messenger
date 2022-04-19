@@ -9,11 +9,7 @@ export interface WidgetLoaderSettings {
 }
 
 export interface WidgetLoader {
-  widget_key: string;
-  config: unknown;
-
   load: (opts?: LegacyOptions) => Promise<void>;
-
   createMessenger(
     version: 0
   ): (
