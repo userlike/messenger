@@ -10,10 +10,6 @@
 npm install @userlike/messenger
 ```
 
-## Usage
-
-See [examples](#examples) for further details on how to use `createMessenger`.
-
 ### ES modules
 
 ```js
@@ -45,11 +41,36 @@ require(['userlike-messenger'], function (userlike) {
 
 ------
 
+## Usage
+
+Any function from Userlike Messenger API returns an Action Result that you have to handle based on your needs (e.g. throw an error, ignore the result).
+The Action result is a discriminated (or tagged) Union Type that either represents a `success` or `error`.
+
+For example, when creating the messenger you will either receive an Action Result of
+
+```javascript
+{
+  kind: "success",
+  value: messengerApi
+}
+```
+
+or an error like
+
+```javascript
+{
+  kind: "error",
+  error: 'Messenger API feature is not included in your product plan.',
+}
+```
+
+It's important to notice that the API function won't throw an error by itself, but you need to handle the Action Result and throw an error by yourself if you need it.
+
+### Usage with react
+See the [playground](https://codesandbox.io/s/userlike-messenger-api-forked-m32fkz?file=/src/App.tsx).
+
 ## Examples
-
 ### Create the API
-
-See the [playground](https://codesandbox.io/s/userlike-messenger-api-qyqkg).
 
 ```typescript
 import { createMessenger, v1 } from "@userlike/messenger";
