@@ -45,8 +45,11 @@ require(['userlike-messenger'], function (userlike) {
 
 See [examples](#examples) for further details on how to use `createMessenger`.
 
+### Usage with typescript
+See the [typescript playground](https://codesandbox.io/s/userlike-messenger-api-vanilla-8j47eg?file=/src/index.ts).
+
 ### Usage with react
-See the [playground](https://codesandbox.io/s/userlike-messenger-api-forked-m32fkz?file=/src/App.tsx).
+See the [react playground](https://codesandbox.io/s/userlike-messenger-api-forked-m32fkz?file=/src/App.tsx).
 
 ## Examples
 ### Create the API
