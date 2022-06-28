@@ -43,28 +43,7 @@ require(['userlike-messenger'], function (userlike) {
 
 ## Usage
 
-Any function from Userlike Messenger API returns an Action Result that you have to handle based on your needs (e.g. throw an error, ignore the result).
-The Action result is a discriminated (or tagged) Union Type that either represents a `success` or `error`.
-
-For example, when creating the messenger you will either receive an Action Result of
-
-```javascript
-{
-  kind: "success",
-  value: messengerApi
-}
-```
-
-or an error like
-
-```javascript
-{
-  kind: "error",
-  error: 'Messenger API feature is not included in your product plan.',
-}
-```
-
-It's important to notice that the API function won't throw an error by itself, but you need to handle the Action Result and throw an error by yourself if you need it.
+See [examples](#examples) for further details on how to use `createMessenger`.
 
 ### Usage with react
 See the [playground](https://codesandbox.io/s/userlike-messenger-api-forked-m32fkz?file=/src/App.tsx).
@@ -183,6 +162,12 @@ const foo = Rx.pipe(
 
 const bar = Rx.pipe(api.state$, $.map(v1.getUnreadMessageCount));
 ```
+
+### Error handling
+Messenger API never throws an error. Instead it returns an [`ActionResult`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/ActionResult.ts#L4) which represents either a successful outcome or an erroneous outcome. 
+In technical terms, `ActionResult` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `ActionSuccess` and `ActionError`, similar to [Rust's `Result<E, T>`](https://doc.rust-lang.org/std/result/).
+
+It's important to notice that the API function won't throw an error by itself, but you need to handle the Action Result and throw an error by yourself as you need it.
 
 ## Versioning
 
