@@ -48,7 +48,10 @@ See [examples](#examples) for further details on how to use `createMessenger`.
 ### Usage with typescript
 See the [typescript playground](https://codesandbox.io/s/userlike-messenger-api-vanilla-8j47eg?file=/src/index.ts).
 
-### Usage with react
+### Usage with javascript
+See the [javascript playground](https://codesandbox.io/s/userlike-messenger-api-vanilla-js-7rrgm5?file=/src/index.js)
+
+### Usage with react + typescript
 See the [react playground](https://codesandbox.io/s/userlike-messenger-api-forked-m32fkz?file=/src/App.tsx).
 
 ## Examples
