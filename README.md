@@ -170,7 +170,7 @@ const bar = Rx.pipe(api.state$, $.map(v1.getUnreadMessageCount));
 ```
 
 ### Error handling
-Messenger API never throws an error. Instead it returns an [`ActionResult`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/ActionResult.ts#L4) which represents either a successful outcome or an erroneous outcome. 
+Messenger API never throws an error. Instead it returns an [`ActionResult`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/ActionResult.ts#L4) which represents either a successful outcome or an erroneous outcome.
 In technical terms, `ActionResult` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `ActionSuccess` and `ActionError`, similar to [Rust's `Result<E, T>`](https://doc.rust-lang.org/std/result/).
 
 It's important to notice that the API function won't throw an error by itself, but you need to handle the Action Result and throw an error by yourself as you need it.
@@ -184,5 +184,5 @@ We highly suggest you to use Typescript to consume _Userlike Messenger API_ so t
 ### Dates
 
 - **v1** <br />
-  Deprecation: 2022-08-01 <br />
-  End-of-life: 2023-08-01
+  Deprecation: 2023-08-01 <br />
+  End-of-life: 2024-08-01
