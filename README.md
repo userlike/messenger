@@ -33,6 +33,10 @@ require(['userlike-messenger'], function (userlike) {
 ### script tag
 
 ```html
+<!-- 
+unpkg is an open source project. It's not affiliated with Userlike. Use it to quickly and easily load 
+messenger api without bundling it yourself.
+-->
 <script src="https://unpkg.com/@userlike/messenger/dist/browser/index.min.js"></script>
 <script>
   UserlikeMessenger.createMessenger({ ... });
