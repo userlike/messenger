@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.2.0...@userlike/messenger-internal@3.0.0) (2023-03-28)
+
+
+### Code Refactoring
+
+* **messenger-internal:** remove unnecessary fields from WidgetLoader interface ([c61471d](https://github.com/userlike/messenger/commit/c61471df34a122f5e2728730f81ad92d4ab2e147))
+
+
+### BREAKING CHANGES
+
+* **messenger-internal:** `widget_key` and `config` fields are removed from `WidgetLoader`.
+
+
+
+
+
 # [2.2.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@2.1.1...@userlike/messenger-internal@2.2.0) (2022-03-08)
 
 
