@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger@1.2.4...@userlike/messenger@1.2.5-alpha.0) (2024-05-02)
+
+**Note:** Version bump only for package @userlike/messenger
+
+
+
+
+
 ## [1.2.4](https://github.com/userlike/messenger/compare/@userlike/messenger@1.2.3...@userlike/messenger@1.2.4) (2023-03-28)
 
 **Note:** Version bump only for package @userlike/messenger
