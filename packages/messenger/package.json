@@ -20,12 +20,12 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "yarn build:es && yarn build:cjs && yarn build:browser",
-    "build:es": "tsc",
-    "build:cjs": "tsc -b tsconfig.cjs.json",
+    "build:es": "mklib tsc",
+    "build:cjs": "mklib tsc -b tsconfig.cjs.json",
     "build:browser": "webpack -c webpack.config.js",
     "clean": "rm -rf dist",
-    "lint": "eslint src --ext .ts",
-    "test": "jest"
+    "lint": "mklib eslint src --ext .ts",
+    "test": "mklib jest"
   },
   "publishConfig": {
     "access": "public"

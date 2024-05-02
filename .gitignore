@@ -4,3 +4,6 @@ tsconfig.tsbuildinfo
 yarn-error.log
 lerna-debug.log
 .vscode
+
+/.yarn/*
+!/.yarn/releases

@@ -15,14 +15,15 @@
     "test": "mklib test",
     "commit": "mklib commit",
     "v": "mklib version",
-    "v:pre": "mklib version:pre",
-    "v:grad": "mklib version:grad",
+    "v:pre": "mklib version --pre",
+    "v:grad": "mklib version --grad",
     "pub": "mklib publish",
     "prepare": "mklib prepare"
   },
   "devDependencies": {
-    "@anilanar/mklib": "^8.0.0",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^5.0.1"
-  }
+    "@anilanar/mklib": "^9.0.1",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "packageManager": "yarn@4.1.1"
 }
