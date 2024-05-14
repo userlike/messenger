@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.0.1-alpha.0...@userlike/messenger-internal@3.1.0-alpha.0) (2024-05-14)
+
+
+### Features
+
+* add contact verification ([aa4b708](https://github.com/userlike/messenger/commit/aa4b70876c6b2b2fe5016c7a7849bb2b7f5cdc94))
+
+
+
+
+
 ## [3.0.1-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.0.0...@userlike/messenger-internal@3.0.1-alpha.0) (2024-05-02)
 
 **Note:** Version bump only for package @userlike/messenger-internal
