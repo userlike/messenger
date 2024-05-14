@@ -188,5 +188,5 @@ We highly suggest you to use Typescript to consume _Userlike Messenger API_ so t
 ### Dates
 
 - **v1** <br />
-  Deprecation: 2023-08-01 <br />
-  End-of-life: 2024-08-01
+  Deprecation: 2025-08-01 <br />
+  End-of-life: 2026-08-01
