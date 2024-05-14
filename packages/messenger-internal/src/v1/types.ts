@@ -17,6 +17,10 @@ export interface Credentials {
 
 export interface MountOptions {
   credentials?: Credentials;
+  externalToken?: {
+      getToken: () => Promise<string>;
+      onError?: (e: string) => void;
+  }
 }
 
 export interface ApiActions {
