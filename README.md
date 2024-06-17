@@ -173,6 +173,40 @@ const foo = Rx.pipe(
 const bar = Rx.pipe(api.state$, $.map(v1.getUnreadMessageCount));
 ```
 
+## Contact Authentication
+
+To use Contact Authentication, you first need to create a secret "Messenger API authentication signing key" in your API settings. You then need to securely store that signing key in your system and create a service that uses that signing to create a JWT that we use to authenticate a Contact.
+
+The JWT payload must be signed using your messenger signing key via `HMAC-SHA256` and must have the following shape:
+
+```
+interface TokenPayload {
+  sub: string; // a unique ID of your choice that you want to use to identify the Contact (max length: 255)
+  iat: number; // issued at timestamp in seconds
+  exp: number; // expires at timestamp in seconds
+}
+```
+
+You can then then pass the externalToken configuration when calling the mount() function of our Messenger API:
+
+```
+api.mount({
+  externalToken: {
+    getToken: (){
+      // call your Service that returns the JWT
+    },
+    onError: (e) {
+      // callback to handle errors using Contact Authentication
+    }
+  }
+})
+
+```
+
+When the JWT is valid, your Contacts will have access to all their ongoing and previous conversations regardless of which browser, device, or platform they're using the Messenger on.
+
+In case the JWT is invalid (for example when it expired or was signed incorrectly) the onError callback is called.
+
 ### Error handling
 Messenger API never throws an error. Instead it returns an [`ActionResult`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/ActionResult.ts#L4) which represents either a successful outcome or an erroneous outcome.
 In technical terms, `ActionResult` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `ActionSuccess` and `ActionError`, similar to [Rust's `Result<E, T>`](https://doc.rust-lang.org/std/result/).
