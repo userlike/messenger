@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger@1.2.5-alpha.0...@userlike/messenger@1.3.0-alpha.0) (2024-06-26)
+
+
+### Features
+
+* add new api version v2 ([6267723](https://github.com/userlike/messenger/commit/62677237090b025ef52942cd9007eedc4c4dc96b))
+
+
+
+
+
 ## [1.2.5](https://github.com/userlike/messenger/compare/@userlike/messenger@1.2.5-alpha.1...@userlike/messenger@1.2.5) (2024-06-17)
 
 **Note:** Version bump only for package @userlike/messenger
