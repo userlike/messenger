@@ -1,8 +1,9 @@
-import type { ActionResult } from "../ActionResult";
 import type { MessengerInfo } from "../types";
 import type { VersionedApi } from "../versioning";
 import type * as v0 from "../v0";
 import type * as v1 from "../v1";
+import type * as v2 from "../v2";
+import { ActionResult } from "../shared";
 
 export interface WidgetLoaderSettings {
   widget_key: string;
@@ -11,21 +12,27 @@ export interface WidgetLoaderSettings {
 export interface WidgetLoader {
   load: (opts?: LegacyOptions) => Promise<void>;
   createMessenger(
-    version: 0
+    version: 0,
   ): (
-    settings: WidgetLoaderSettings
+    settings: WidgetLoaderSettings,
   ) => Promise<ActionResult<string, MessengerInfo<0, v0.Api>>>;
 
   createMessenger(
-    version: 1
+    version: 1,
   ): (
-    settings: WidgetLoaderSettings
+    settings: WidgetLoaderSettings,
   ) => Promise<ActionResult<string, MessengerInfo<1, v1.Api>>>;
 
   createMessenger(
-    version: number
+    version: 2,
   ): (
-    settings: WidgetLoaderSettings
+    settings: WidgetLoaderSettings,
+  ) => Promise<ActionResult<string, MessengerInfo<2, v2.Messenger>>>;
+
+  createMessenger(
+    version: number,
+  ): (
+    settings: WidgetLoaderSettings,
   ) => Promise<
     ActionResult<string, MessengerInfo<number, VersionedApi<number>>>
   >;
@@ -38,5 +45,5 @@ export interface LegacyOptions {
 
 export type Run = (
   settings: WidgetLoaderSettings,
-  hostWindow: Window
+  hostWindow: Window,
 ) => Promise<WidgetLoader>;

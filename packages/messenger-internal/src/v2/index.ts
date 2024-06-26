@@ -1,7 +1,6 @@
 export * from "./types";
 
 export {
-  CoreApi,
   Credentials,
   MountOptions,
   State,

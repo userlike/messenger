@@ -3,8 +3,8 @@
  * @userlike/messenger@1.0.0
  */
 
-import type { ActionResult } from "./ActionResult";
 import { WidgetLoader } from "./loader";
+import { ActionResult } from "./shared";
 
 const EVENT_NAME = "userlike:messenger:script";
 
@@ -13,12 +13,12 @@ const EVENT_NAME = "userlike:messenger:script";
  */
 export const notifyScriptLoad = (
   payload: ActionResult<{ widget_key: string; original?: Error }, WidgetLoader>,
-  target: EventTarget = window
+  target: EventTarget = window,
 ): void => {
   target.dispatchEvent(
     new CustomEvent(EVENT_NAME, {
       detail: payload,
-    })
+    }),
   );
 };
 
@@ -27,7 +27,7 @@ export const notifyScriptLoad = (
  */
 export function isPureLoader(
   widgetKey: string,
-  global: Window = window
+  global: Window = window,
 ): boolean {
   return getCustomWindow(global).__USERLIKE_PURE__[widgetKey] === true;
 }
@@ -43,7 +43,7 @@ type CustomWindow = Window &
   };
 
 function getCustomWindow(window: Window) {
-  const customWindow = (window as unknown) as CustomWindow;
+  const customWindow = window as unknown as CustomWindow;
   customWindow.__USERLIKE_PURE__ = { ...customWindow.__USERLIKE_PURE__ };
   return customWindow;
 }
