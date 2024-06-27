@@ -182,8 +182,8 @@ The JWT payload must be signed using your messenger signing key via `HMAC-SHA256
 ```typescript
 interface TokenPayload {
   sub: string; // a unique ID of your choice that you want to use to identify the Contact (max length: 255)
-  iat: number; // issued at timestamp in seconds
-  exp: number; // expires at timestamp in seconds
+  iat: number; // "issued at" unix timestamp, in seconds
+  exp: number; // "expires at" unix timestamp, in seconds
 }
 ```
 
@@ -192,11 +192,11 @@ You can then then pass the externalToken configuration when calling the mount() 
 ```typescript
 api.mount({
   externalToken: {
-    getToken: (){
-      // call your Service that returns the JWT
+    getToken: () => {
+      // return a JWT created by your service
     },
-    onError: (e) {
-      // callback to handle errors using Contact Authentication
+    onError: (e) => {
+      // callback to handle errors related to contact authentication
     }
   }
 })
@@ -205,7 +205,7 @@ api.mount({
 
 When the JWT is valid, your Contacts will have access to all their ongoing and previous conversations regardless of which browser, device, or platform they're using the Messenger on.
 
-In case the JWT is invalid (for example when it expired or was signed incorrectly) the onError callback is called.
+In case the JWT is invalid (for example when it expired or was signed incorrectly) the `onError` callback is called.
 
 ### Error handling
 Messenger API never throws an error. Instead it returns an [`ActionResult`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/ActionResult.ts#L4) which represents either a successful outcome or an erroneous outcome.
