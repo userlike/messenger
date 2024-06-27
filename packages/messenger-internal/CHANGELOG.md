@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0-alpha.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.0-alpha.0...@userlike/messenger-internal@3.2.0-alpha.1) (2024-06-27)
+
+
+### Features
+
+* improve v2 type names ([1fee6a6](https://github.com/userlike/messenger/commit/1fee6a6302f296adec8a7f5efec956f4889b97bd))
+
+
+
+
+
 # [3.2.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.0.1-alpha.0...@userlike/messenger-internal@3.2.0-alpha.0) (2024-06-26)
 
 
