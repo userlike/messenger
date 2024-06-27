@@ -1,13 +1,13 @@
 import { ActionResult, Credentials } from "../shared";
-import { CoreApiActions, CoreApiState, MountOptions } from "../shared/types";
+import { MessengerActionsApi, MessengerStateApi, MountOptions } from "../shared/types";
 
-export interface Api extends ApiActions, CoreApiState {
+export interface Api extends ApiActions, MessengerStateApi {
   version: 1;
 }
 
-export type ApiState = CoreApiState;
+export type ApiState = MessengerStateApi;
 
-export interface ApiActions extends CoreApiActions {
+export interface ApiActions extends MessengerActionsApi {
   /**
    * Create the messenger.
    * When credentials are provided those will be used for authentication.

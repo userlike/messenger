@@ -9,14 +9,14 @@ export interface MountOptions {
   };
 }
 
-export interface CoreApi extends CoreApiActions, CoreApiState {}
+export interface MessengerApi extends MessengerActionsApi, MessengerStateApi {}
 
-export interface CoreApiState {
+export interface MessengerStateApi {
   state$: Observable<State>;
   getState(): State;
 }
 
-export interface CoreApiActions {
+export interface MessengerActionsApi {
   /**
    * Control the visibility of messenger features.
    */

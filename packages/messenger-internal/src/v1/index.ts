@@ -1,7 +1,7 @@
 export * from "./types";
 
 export {
-  CoreApi,
+  MessengerApi,
   Credentials,
   MountOptions,
   State,

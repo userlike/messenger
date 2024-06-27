@@ -17,7 +17,7 @@ export * from "@userlike/messenger-internal";
  */
 export async function createMessenger(
   opts: MessengerOptions<2>,
-): Promise<ActionResult<string, MessengerInfo<2, v2.Messenger>>>;
+): Promise<ActionResult<string, MessengerInfo<2, v2.Api>>>;
 
 /**
  * For internal use only.

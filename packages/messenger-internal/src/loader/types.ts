@@ -27,7 +27,7 @@ export interface WidgetLoader {
     version: 2,
   ): (
     settings: WidgetLoaderSettings,
-  ) => Promise<ActionResult<string, MessengerInfo<2, v2.Messenger>>>;
+  ) => Promise<ActionResult<string, MessengerInfo<2, v2.Api>>>;
 
   createMessenger(
     version: number,

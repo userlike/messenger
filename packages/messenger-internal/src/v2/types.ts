@@ -1,12 +1,11 @@
 import {
   ActionResult,
-  CoreApi,
   Credentials,
   MountOptions,
   Observable,
 } from "../shared";
 
-export interface Messenger {
+export interface Api {
   version: 2;
 
   /**
@@ -30,4 +29,4 @@ export interface Messenger {
   ): Promise<ActionResult<string, Credentials>>;
 }
 
-export type Api = CoreApi;
+export type { MessengerApi } from "../shared";
