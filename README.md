@@ -179,7 +179,7 @@ To use Contact Authentication, you first need to create a secret "Messenger API 
 
 The JWT payload must be signed using your messenger signing key via `HMAC-SHA256` and must have the following shape:
 
-```
+```typescript
 interface TokenPayload {
   sub: string; // a unique ID of your choice that you want to use to identify the Contact (max length: 255)
   iat: number; // issued at timestamp in seconds
@@ -189,7 +189,7 @@ interface TokenPayload {
 
 You can then then pass the externalToken configuration when calling the mount() function of our Messenger API:
 
-```
+```typescript
 api.mount({
   externalToken: {
     getToken: (){
