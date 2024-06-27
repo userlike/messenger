@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0-alpha.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.0-alpha.1...@userlike/messenger-internal@3.2.0-alpha.2) (2024-06-27)
+
+
+### Bug Fixes
+
+* fix return type of v2 mount ([da5e725](https://github.com/userlike/messenger/commit/da5e7258476ef67b17c5c438b2830f5bd517f811))
+
+
+
+
+
 # [3.2.0-alpha.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.0-alpha.0...@userlike/messenger-internal@3.2.0-alpha.1) (2024-06-27)
 
 
