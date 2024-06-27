@@ -1,6 +1,7 @@
 import {
   ActionResult,
   Credentials,
+  MessengerApi,
   MountOptions,
   Observable,
 } from "../shared";
@@ -12,13 +13,13 @@ export interface Api {
    * Returns an observable. The messenger mounts when the observable is
    * subscribed to and unmounts when the unsubscribing from the observable.
    *
+   * When credentials are provided those will be used for authentication.
+   *
    * The messenger can recreate itself under certain conditions. For example
    * when a website router switches to another widget, the observable will emit
-   * a new {@link Api} instance.
-   *
-   * When credentials are provided those will be used for authentication.
+   * a new {@link Messenger} instance.
    */
-  mount(opts?: MountOptions): Observable<ActionResult<string, Api>>;
+  mount(opts?: MountOptions): Observable<ActionResult<string, Messenger>>;
 
   /**
    * Experimental.
@@ -29,4 +30,5 @@ export interface Api {
   ): Promise<ActionResult<string, Credentials>>;
 }
 
-export type { MessengerApi } from "../shared";
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface Messenger extends MessengerApi {}
