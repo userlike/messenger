@@ -31,5 +31,4 @@ export interface JsonRecord {
   readonly [key: string]: Json;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface JsonArray extends ReadonlyArray<Json> {}

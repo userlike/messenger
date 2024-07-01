@@ -8,7 +8,6 @@ export {
   Conversation,
   ContactInfo,
   Message,
-  EnableRegistration,
   VisibilityConfiguration,
   getUnreadMessageCount,
 } from "../shared";

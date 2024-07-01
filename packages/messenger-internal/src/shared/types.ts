@@ -117,6 +117,9 @@ export interface Message {
   id: string;
 }
 
+/**
+ * @deprecated
+ */
 export enum EnableRegistration {
   Normal,
   Registration,

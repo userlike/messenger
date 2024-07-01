@@ -30,5 +30,4 @@ export interface Api {
   ): Promise<ActionResult<string, Credentials>>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Messenger extends MessengerApi {}
