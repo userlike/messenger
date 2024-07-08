@@ -6,6 +6,11 @@ import {
   Observable,
 } from "../shared";
 
+export type MountResult =
+| { kind: 'success', value: Messenger }
+| { kind: 'success', value: null, reason: string }
+| { kind: 'error', error: string }
+
 export interface Api {
   version: 2;
 
@@ -19,7 +24,7 @@ export interface Api {
    * when a website router switches to another widget, the observable will emit
    * a new {@link Messenger} instance.
    */
-  mount(opts?: MountOptions): Observable<Result<Messenger, string>>;
+  mount(opts?: MountOptions): Observable<MountResult>;
 
   /**
    * Experimental.

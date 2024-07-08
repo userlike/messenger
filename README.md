@@ -100,6 +100,11 @@ async function createApi(): Promise<v2.Api> {
       return;
     }
 
+    if (result.value === null) {
+      console.log("messenger is not mounted", result.reason);
+      return;
+    }
+
     const messenger = result.value;
   });
 
