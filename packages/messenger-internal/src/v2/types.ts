@@ -1,5 +1,5 @@
 import {
-  ActionResult,
+  Result,
   Credentials,
   MessengerApi,
   MountOptions,
@@ -19,15 +19,13 @@ export interface Api {
    * when a website router switches to another widget, the observable will emit
    * a new {@link Messenger} instance.
    */
-  mount(opts?: MountOptions): Observable<ActionResult<string, Messenger>>;
+  mount(opts?: MountOptions): Observable<Result<Messenger, string>>;
 
   /**
    * Experimental.
    * Consumes a short living token to returns long living Credentials.
    */
-  __unstableConsumeToken(
-    token: string,
-  ): Promise<ActionResult<string, Credentials>>;
+  __unstableConsumeToken(token: string): Promise<Result<Credentials, string>>;
 }
 
 export interface Messenger extends MessengerApi {}

@@ -1,5 +1,5 @@
 import {
-  ActionResult,
+  Result,
   loadScripts,
   MessengerOptions,
   VersionedApi,
@@ -17,7 +17,7 @@ export * from "@userlike/messenger-internal";
  */
 export async function createMessenger(
   opts: MessengerOptions<2>,
-): Promise<ActionResult<string, MessengerInfo<2, v2.Api>>>;
+): Promise<Result<MessengerInfo<2, v2.Api>, string>>;
 
 /**
  * For internal use only.
@@ -26,7 +26,7 @@ export async function createMessenger(
  */
 export async function createMessenger(
   opts: MessengerOptions<1>,
-): Promise<ActionResult<string, MessengerInfo<1, v1.Api>>>;
+): Promise<Result<MessengerInfo<1, v1.Api>, string>>;
 
 /**
  * For internal use only.
@@ -35,15 +35,15 @@ export async function createMessenger(
  */
 export async function createMessenger(
   opts: MessengerOptions<0>,
-): Promise<ActionResult<string, MessengerInfo<0, v0.Api>>>;
+): Promise<Result<MessengerInfo<0, v0.Api>, string>>;
 
 export async function createMessenger(
   opts: MessengerOptions<number>,
-): Promise<ActionResult<string, MessengerInfo<number, VersionedApi<number>>>>;
+): Promise<Result<MessengerInfo<number, VersionedApi<number>>, string>>;
 
 export async function createMessenger(
   opts: MessengerOptions<number>,
-): Promise<ActionResult<string, MessengerInfo<number, VersionedApi<number>>>> {
+): Promise<Result<MessengerInfo<number, VersionedApi<number>>, string>> {
   const { createMessenger } = await loadScripts(
     window,
     opts.widgetKey,

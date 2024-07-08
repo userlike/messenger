@@ -4,7 +4,7 @@
  */
 
 import { WidgetLoader } from "./loader";
-import { ActionResult } from "./shared";
+import { Result } from "./shared";
 
 const EVENT_NAME = "userlike:messenger:script";
 
@@ -12,7 +12,7 @@ const EVENT_NAME = "userlike:messenger:script";
  * @deprecated
  */
 export const notifyScriptLoad = (
-  payload: ActionResult<{ widget_key: string; original?: Error }, WidgetLoader>,
+  payload: Result<WidgetLoader, { widget_key: string; original?: Error }>,
   target: EventTarget = window,
 ): void => {
   target.dispatchEvent(

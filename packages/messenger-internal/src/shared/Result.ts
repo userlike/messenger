@@ -1,22 +1,41 @@
-/**
- * Messenger state that customers have read access to.
- */
-export type ActionResult<E, A> = ActionSuccess<A> | ActionError<E>;
+export type Result<A, E> = Success<A> | Error<E>;
 
-export interface ActionSuccess<A> {
+/**
+ * @deprecated Use {@link Result} instead.
+ */
+export type ActionResult<E, A> = Result<A, E>;
+
+export interface Success<A> {
   kind: "success";
   value: A;
 }
-export interface ActionError<E> {
+
+/**
+ * @deprecated Use {@link Success} instead.
+ */
+export type ActionSuccess<A> = Success<A>;
+
+export interface Error<E> {
   kind: "error";
   error: E;
 }
 
-export const success = <E = never, A = never>(a: A): ActionResult<E, A> => ({
+/**
+ * @deprecated Use {@link Error} instead.
+ */
+export type ActionError<E> = Error<E>;
+
+export const success = <E = never, A = never>(a: A): Result<A, E> => ({
   kind: "success",
   value: a,
 });
-export const err = <E = never, A = never>(err: E): ActionResult<E, A> => ({
+
+export const error = <E = never, A = never>(err: E): Result<A, E> => ({
   kind: "error",
   error: err,
 });
+
+/**
+ * @deprecated Use {@link error} instead.
+ */
+export const err = error;

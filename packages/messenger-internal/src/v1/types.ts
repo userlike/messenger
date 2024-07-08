@@ -1,5 +1,9 @@
-import { ActionResult, Credentials } from "../shared";
-import { MessengerActionsApi, MessengerStateApi, MountOptions } from "../shared/types";
+import { Result, Credentials } from "../shared";
+import {
+  MessengerActionsApi,
+  MessengerStateApi,
+  MountOptions,
+} from "../shared/types";
 
 export interface Api extends ApiActions, MessengerStateApi {
   version: 1;
@@ -12,18 +16,16 @@ export interface ApiActions extends MessengerActionsApi {
    * Create the messenger.
    * When credentials are provided those will be used for authentication.
    */
-  mount(opts?: MountOptions): Promise<ActionResult<string, void>>;
+  mount(opts?: MountOptions): Promise<Result<void, string>>;
 
   /**
    * Destroy the messenger.
    */
-  unmount(): Promise<ActionResult<string, void>>;
+  unmount(): Promise<Result<void, string>>;
 
   /**
    * Experimental.
    * Consumes a short living token to returns long living Credentials.
    */
-  __unstableConsumeToken(
-    token: string,
-  ): Promise<ActionResult<string, Credentials>>;
+  __unstableConsumeToken(token: string): Promise<Result<Credentials, string>>;
 }

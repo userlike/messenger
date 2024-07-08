@@ -1,4 +1,4 @@
-import { ActionResult } from "./Result";
+import { Result } from "./Result";
 import { Observable } from "./Observable";
 
 export interface MountOptions {
@@ -20,70 +20,68 @@ export interface MessengerActionsApi {
   /**
    * Control the visibility of messenger features.
    */
-  setVisibility(
-    conf: VisibilityConfiguration,
-  ): Promise<ActionResult<string, void>>;
+  setVisibility(conf: VisibilityConfiguration): Promise<Result<void, string>>;
 
   /**
    * Delete contact's session and restart messenger.
    */
-  logout(): Promise<ActionResult<string, void>>;
+  logout(): Promise<Result<void, string>>;
 
   /**
    * Simulate as if the contact clicked the messenger button.
    *
    * This is a no-op if it's already maximized.
    */
-  maximize(): Promise<ActionResult<string, void>>;
+  maximize(): Promise<Result<void, string>>;
 
   /**
    * Simulate as if the contact clicked the minimize button.
    */
-  minimize(): Promise<ActionResult<string, void>>;
+  minimize(): Promise<Result<void, string>>;
 
   /**
    * Set custom data.
    */
   setCustomData(
     data: Record<string, unknown>,
-  ): Promise<ActionResult<string, void>>;
+  ): Promise<Result< void, string>>;
 
   /**
    * Set contact info.
    */
   setContactInfo(
     data: Partial<ContactInfo>,
-  ): Promise<ActionResult<string, void>>;
+  ): Promise<Result< void, string>>;
 
   /**
    * Experimental.
    */
-  __unstableStartConversation(): Promise<ActionResult<string, void>>;
+  __unstableStartConversation(): Promise<Result< void, string>>;
 
   /**
    * Experimental.
    */
   __unstableStartConversationWithOperator(
     operatorId: number,
-  ): Promise<ActionResult<string, void>>;
+  ): Promise<Result< void, string>>;
 
   /**
    * Experimental.
    * Opens a conversation by id.
    */
-  __unstableOpenConversation(id: number): Promise<ActionResult<string, void>>;
+  __unstableOpenConversation(id: number): Promise<Result< void, string>>;
 
   /**
    * Experimental.
    */
   __unstableSetRegistration(
     enabled: boolean,
-  ): Promise<ActionResult<string, void>>;
+  ): Promise<Result< void, string>>;
 
   /**
    * Experimental.
    */
-  __unstableSetProactive(enabled: boolean): Promise<ActionResult<string, void>>;
+  __unstableSetProactive(enabled: boolean): Promise<Result< void, string>>;
 }
 
 export interface State {
