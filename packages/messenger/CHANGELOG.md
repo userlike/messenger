@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-alpha.3](https://github.com/userlike/messenger/compare/@userlike/messenger@1.3.0-alpha.2...@userlike/messenger@1.3.0-alpha.3) (2024-07-08)
+
+
+### Features
+
+* rename ActionResult to Result and swap generic args ([08218f9](https://github.com/userlike/messenger/commit/08218f9acf57cb4a7cab0296c74c6b6b3fa6392c))
+
+
+
+
+
 # [1.3.0-alpha.2](https://github.com/userlike/messenger/compare/@userlike/messenger@1.3.0-alpha.1...@userlike/messenger@1.3.0-alpha.2) (2024-06-27)
 
 **Note:** Version bump only for package @userlike/messenger
