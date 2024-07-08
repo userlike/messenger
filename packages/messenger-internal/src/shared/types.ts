@@ -1,4 +1,4 @@
-import { ActionResult } from "./ActionResult";
+import { ActionResult } from "./Result";
 import { Observable } from "./Observable";
 
 export interface MountOptions {

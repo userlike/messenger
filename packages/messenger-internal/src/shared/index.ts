@@ -1,4 +1,4 @@
 export * from "./Observable";
-export * from "./ActionResult";
+export * from "./Result";
 export * from "./types";
 export * from "./util";

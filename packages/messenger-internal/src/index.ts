@@ -1,4 +1,4 @@
-export * from "./shared/ActionResult";
+export * from "./shared/Result";
 export * from "./shared/Observable";
 export * from "./types";
 export * from "./versioning";
