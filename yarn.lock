@@ -15,9 +15,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@anilanar/mklib@npm:^9.0.1":
-  version: 9.0.1
-  resolution: "@anilanar/mklib@npm:9.0.1"
+"@anilanar/mklib@npm:^9.0.2":
+  version: 9.0.2
+  resolution: "@anilanar/mklib@npm:9.0.2"
   dependencies:
     "@babel/cli": "npm:^7.24.5"
     "@babel/core": "npm:^7.24.5"
@@ -40,7 +40,7 @@ __metadata:
     typescript: "npm:^5.4.5"
   bin:
     mklib: run.mjs
-  checksum: 10c0/fb721189adad97cf43a17b68dbea06bd5e1712d00a7ca90042084847d4fa22d86696073fc3dc7428061b1fc1a21e7a62755365e8f766a4845a52160250ab2f3c
+  checksum: 10c0/9067c3aad607476094a11ebc0a288524f0bc7f9d30bfa65eff5082df0588aa31f4b1edb85398f1c73d2d81c0d816e63a343623f9b9c9ed25ae3e92d14fc605f0
   languageName: node
   linkType: hard
 
@@ -3758,7 +3758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@userlike/messenger-internal@npm:^3.1.0, @userlike/messenger-internal@workspace:packages/messenger-internal":
+"@userlike/messenger-internal@npm:^3.2.0-alpha.3, @userlike/messenger-internal@workspace:packages/messenger-internal":
   version: 0.0.0-use.local
   resolution: "@userlike/messenger-internal@workspace:packages/messenger-internal"
   languageName: unknown
@@ -3768,7 +3768,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@userlike/messenger@workspace:packages/messenger"
   dependencies:
-    "@userlike/messenger-internal": "npm:^3.1.0"
+    "@userlike/messenger-internal": "npm:^3.2.0-alpha.3"
   languageName: unknown
   linkType: soft
 
@@ -9170,7 +9170,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "messenger@workspace:."
   dependencies:
-    "@anilanar/mklib": "npm:^9.0.1"
+    "@anilanar/mklib": "npm:^9.0.2"
     webpack: "npm:^5.91.0"
     webpack-cli: "npm:^5.1.4"
   languageName: unknown

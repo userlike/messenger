@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0-alpha.3](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.0-alpha.2...@userlike/messenger-internal@3.2.0-alpha.3) (2024-07-08)
+
+
+### Features
+
+* extend mount api to return reason when no messenger mounts ([e628076](https://github.com/userlike/messenger/commit/e628076bd9a6d8283abd4e818cd0f091e32a70bd))
+* rename ActionResult to Result and swap generic args ([08218f9](https://github.com/userlike/messenger/commit/08218f9acf57cb4a7cab0296c74c6b6b3fa6392c))
+
+
+
+
+
+# [3.2.0-alpha.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.0-alpha.1...@userlike/messenger-internal@3.2.0-alpha.2) (2024-06-27)
+
+
+### Bug Fixes
+
+* fix return type of v2 mount ([da5e725](https://github.com/userlike/messenger/commit/da5e7258476ef67b17c5c438b2830f5bd517f811))
+
+
+
+
+
+# [3.2.0-alpha.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.0-alpha.0...@userlike/messenger-internal@3.2.0-alpha.1) (2024-06-27)
+
+
+### Features
+
+* improve v2 type names ([1fee6a6](https://github.com/userlike/messenger/commit/1fee6a6302f296adec8a7f5efec956f4889b97bd))
+
+
+
+
+
+# [3.2.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.0.1-alpha.0...@userlike/messenger-internal@3.2.0-alpha.0) (2024-06-26)
+
+
+### Features
+
+* add contact verification ([e989a71](https://github.com/userlike/messenger/commit/e989a711901ee11fefd345ec2b0929f4bfdc2c12))
+* add new api version v2 ([6267723](https://github.com/userlike/messenger/commit/62677237090b025ef52942cd9007eedc4c4dc96b))
+
+
+
+
+
 # [3.1.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.1.0-alpha.0...@userlike/messenger-internal@3.1.0) (2024-06-17)
 
 **Note:** Version bump only for package @userlike/messenger-internal

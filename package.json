@@ -21,7 +21,7 @@
     "prepare": "mklib prepare"
   },
   "devDependencies": {
-    "@anilanar/mklib": "^9.0.1",
+    "@anilanar/mklib": "^9.0.2",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
   },

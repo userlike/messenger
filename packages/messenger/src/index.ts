@@ -1,11 +1,12 @@
 import {
-  ActionResult,
+  Result,
   loadScripts,
   MessengerOptions,
   VersionedApi,
   MessengerInfo,
   v0,
   v1,
+  v2,
 } from "@userlike/messenger-internal";
 
 export * from "@userlike/messenger-internal";
@@ -15,8 +16,8 @@ export * from "@userlike/messenger-internal";
  * version information and relevant dates.
  */
 export async function createMessenger(
-  opts: MessengerOptions<1>
-): Promise<ActionResult<string, MessengerInfo<1, v1.Api>>>;
+  opts: MessengerOptions<2>,
+): Promise<Result<MessengerInfo<2, v2.Api>, string>>;
 
 /**
  * For internal use only.
@@ -24,20 +25,29 @@ export async function createMessenger(
  * @deprecated
  */
 export async function createMessenger(
-  opts: MessengerOptions<0>
-): Promise<ActionResult<string, MessengerInfo<0, v0.Api>>>;
+  opts: MessengerOptions<1>,
+): Promise<Result<MessengerInfo<1, v1.Api>, string>>;
+
+/**
+ * For internal use only.
+ *
+ * @deprecated
+ */
+export async function createMessenger(
+  opts: MessengerOptions<0>,
+): Promise<Result<MessengerInfo<0, v0.Api>, string>>;
 
 export async function createMessenger(
-  opts: MessengerOptions<number>
-): Promise<ActionResult<string, MessengerInfo<number, VersionedApi<number>>>>;
+  opts: MessengerOptions<number>,
+): Promise<Result<MessengerInfo<number, VersionedApi<number>>, string>>;
 
 export async function createMessenger(
-  opts: MessengerOptions<number>
-): Promise<ActionResult<string, MessengerInfo<number, VersionedApi<number>>>> {
+  opts: MessengerOptions<number>,
+): Promise<Result<MessengerInfo<number, VersionedApi<number>>, string>> {
   const { createMessenger } = await loadScripts(
     window,
     opts.widgetKey,
-    opts.baseUrl
+    opts.baseUrl,
   );
 
   return createMessenger(opts.version)({

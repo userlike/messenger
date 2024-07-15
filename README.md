@@ -33,8 +33,8 @@ require(['userlike-messenger'], function (userlike) {
 ### script tag
 
 ```html
-<!-- 
-unpkg is an open source project. It's not affiliated with Userlike. Use it to quickly and easily load 
+<!--
+unpkg is an open source project. It's not affiliated with Userlike. Use it to quickly and easily load
 messenger api without bundling it yourself. We highly advise against using unpkg for production.
 -->
 <script src="https://unpkg.com/@userlike/messenger/dist/browser/index.min.js"></script>
@@ -45,18 +45,24 @@ messenger api without bundling it yourself. We highly advise against using unpkg
 
 ------
 
+## Upgrading to Version 2
+
+Version 2 is a breaking change that adds support for widget routers on single page applications. If you are using version 1, we highly recommend upgrading to version 2 as soon as possible. See the [migration guide](./MIGRATION.md).
+
+------
+
 ## Usage
 
 See [examples](#examples) for further details on how to use `createMessenger`.
 
 ### Usage with typescript
-See the [typescript playground](https://codesandbox.io/s/userlike-messenger-api-vanilla-8j47eg?file=/src/index.ts).
+See the [typescript playground](https://codesandbox.io/p/sandbox/userlike-messenger-api-vanilla-v2-kjkflq).
 
 ### Usage with javascript
-See the [javascript playground](https://codesandbox.io/s/userlike-messenger-api-vanilla-js-7rrgm5?file=/src/index.js)
+See the [javascript playground](https://codesandbox.io/p/sandbox/bold-ramanujan-9tcmmk).
 
 ### Usage with react + typescript
-See the [react playground](https://codesandbox.io/s/userlike-messenger-api-forked-m32fkz?file=/src/App.tsx).
+See the [react playground](https://codesandbox.io/p/sandbox/userlike-messenger-api-v2-p2c8fq).
 
 ## Examples
 ### Create the API
@@ -64,9 +70,9 @@ See the [react playground](https://codesandbox.io/s/userlike-messenger-api-forke
 ```typescript
 import { createMessenger, v1 } from "@userlike/messenger";
 
-async function createApi(): Promise<v1.Api> {
+async function createApi(): Promise<v2.Api> {
   const result = await createMessenger({
-    version: 1,
+    version: 2,
     widgetKey: "YOUR_WIDGET_SECRET",
   });
 
@@ -87,9 +93,23 @@ async function createApi(): Promise<v1.Api> {
 ### Create/destroy messenger
 
 ```typescript
-async (api: v1.Api) => {
-  await api.mount();
-  await api.unmount();
+(api: v2.Api) => {
+  const subscription = api.mount().subscribe(result => {
+    if (result.kind === "error") {
+      console.error(result.error);
+      return;
+    }
+
+    if (result.value === null) {
+      console.log("messenger is not mounted", result.reason);
+      return;
+    }
+
+    const messenger = result.value;
+  });
+
+  // Unsubscribing would destroy the messenger
+  subscription.unsubscribe();
 };
 ```
 
@@ -97,80 +117,94 @@ async (api: v1.Api) => {
 
 ```typescript
 // Hide button and notifications
-(api: v1.Api) =>
-  api.setVisibility({
+async (messenger: v2.Messenger) => {
+  await messenger.setVisibility({
     main: true,
     button: false,
     notifications: false,
   });
+}
 
 // Show everything
-(api: v1.Api) =>
-  api.setVisibility({
+async (messenger: v2.Messenger) => {
+  await messenger.setVisibility({
     main: true,
     button: true,
     notifications: true,
   });
+}
 ```
 
 ### Clear user session / Logout
 
 ```typescript
-(api: v1.Api) => api.logout();
+async (messenger: v2.Messenger) => {
+  await messenger.logout();
+}
 ```
 
 ### Maximize/Minimize
 
 ```typescript
-async (api: v1.Api) => {
-  await api.maximize();
-  await api.minimize();
+async (messenger: v2.Messenger) => {
+  await messenger.maximize();
+  await messenger.minimize();
 };
 ```
 
 ### Set custom data
 
 ```typescript
-(api: v1.Api) =>
-  api.setCustomData({
+async (messenger: v2.Messenger) => {
+  await messenger.setCustomData({
     test: "test data",
   });
+}
 ```
 
 ### Set contact info
 
 ```typescript
-(api: v1.Api) =>
-  api.setContactInfo({
+async (messenger: v2.Messenger) => {
+  await messenger.setContactInfo({
     name: "Foo Bar",
     email: "foobar@example.com",
   });
+}
 ```
 
 ### Listen to changes
 
 ```typescript
-const subscription = api.state$.subscribe({
-  next: (state) => console.log("next", state),
-  complete: () => console.log("complete"),
-});
+(messenger: v2.Messenger) => {
+  const subscription = messenger.state$.subscribe({
+    next: (state) => console.log("next", state),
+    complete: () => console.log("complete"),
+  });
 
-subscription.unsubscribe();
+  // unsubscribe when you don't need to listen to changes anymore
+  subscription.unsubscribe();
+}
 ```
 
-You can use `rxjs`, or other streaming libraries:
+### Observables
+
+Both `api.mount()` and `messenger.state` are observables. You can use `rxjs`, or other streaming libraries:
 
 ```typescript
 import * as Rx from "rxjs";
 import * as $ from "rxjs/operators";
 import { v1 } from "@userlike/messenger";
 
-const foo = Rx.pipe(
-  api.state$,
-  $.filter(({ state }) => state !== v1.MessengerState.Hidden)
-);
-
-const bar = Rx.pipe(api.state$, $.map(v1.getUnreadMessageCount));
+(api: v2.Api) => {
+  const unreadMessageCount$ = Rx.pipe(
+    api.mount(),
+    $.filter((result) => result.kind === 'success'),
+    $.map((result) => result.value),
+    $.switchMap((messenger) => messenger.state$),
+    $.map(v2.getUnreadMessageCount),
+  );
+}
 ```
 
 ## Contact Authentication
@@ -208,8 +242,8 @@ When the JWT is valid, your Contacts will have access to all their ongoing and p
 In case the JWT is invalid (for example when it expired or was signed incorrectly) the `onError` callback is called.
 
 ### Error handling
-Messenger API never throws an error. Instead it returns an [`ActionResult`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/ActionResult.ts#L4) which represents either a successful outcome or an erroneous outcome.
-In technical terms, `ActionResult` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `ActionSuccess` and `ActionError`, similar to [Rust's `Result<E, T>`](https://doc.rust-lang.org/std/result/).
+Messenger API never throws an error. Instead it returns a [`Result`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/Result.ts) which represents either a successful outcome or an erroneous outcome.
+In technical terms, `Result` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `Success` and `Error`, similar to [Rust's `Result<T, E>`](https://doc.rust-lang.org/std/result/).
 
 It's important to notice that the API function won't throw an error by itself, but you need to handle the Action Result and throw an error by yourself as you need it.
 
@@ -221,6 +255,9 @@ We highly suggest you to use Typescript to consume _Userlike Messenger API_ so t
 
 ### Dates
 
+- **v2** <br />
+  Deprecation: 2026-08-01 <br />
+  End-of-life: 2027-08-01
 - **v1** <br />
   Deprecation: 2025-08-01 <br />
   End-of-life: 2026-08-01
