@@ -47,7 +47,7 @@ messenger api without bundling it yourself. We highly advise against using unpkg
 
 ## Upgrading to Version 2
 
-Version 2 is a breaking change that adds support for widget routers on single page applications. If you are using version 1, we highly recommend upgrading to version 2 as soon as possible.
+Version 2 is a breaking change that adds support for widget routers on single page applications. If you are using version 1, we highly recommend upgrading to version 2 as soon as possible. See the [migration guide](./MIGRATION.md).
 
 ------
 
