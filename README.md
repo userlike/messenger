@@ -241,7 +241,7 @@ When the JWT is valid, your Contacts will have access to all their ongoing and p
 
 In case the JWT is invalid (for example when it expired or was signed incorrectly) the `onError` callback is called.
 
-### Error handling
+## Error handling
 Messenger API never throws an error. Instead it returns a [`Result`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/shared/Result.ts) which represents either a successful outcome or an erroneous outcome.
 In technical terms, `Result` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `Success` and `Error`, similar to [Rust's `Result<T, E>`](https://doc.rust-lang.org/std/result/).
 
