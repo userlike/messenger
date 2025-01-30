@@ -55,14 +55,11 @@ Version 2 is a breaking change that adds support for widget routers on single pa
 
 See [examples](#examples) for further details on how to use `createMessenger`.
 
-### Usage with typescript
-See the [typescript playground](https://codesandbox.io/p/sandbox/userlike-messenger-api-vanilla-v2-kjkflq).
+**Typescript:** [typescript playground](https://codesandbox.io/p/sandbox/userlike-messenger-api-vanilla-v2-kjkflq).
 
-### Usage with javascript
-See the [javascript playground](https://codesandbox.io/p/sandbox/bold-ramanujan-9tcmmk).
+**Javascript:** [javascript playground](https://codesandbox.io/p/sandbox/bold-ramanujan-9tcmmk).
 
-### Usage with react + typescript
-See the [react playground](https://codesandbox.io/p/sandbox/userlike-messenger-api-v2-p2c8fq).
+**React + typescript:** [react playground](https://codesandbox.io/p/sandbox/userlike-messenger-api-v2-p2c8fq).
 
 ## Examples
 ### Create the API
