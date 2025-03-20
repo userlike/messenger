@@ -42,46 +42,40 @@ export interface MessengerActionsApi {
   /**
    * Set custom data.
    */
-  setCustomData(
-    data: Record<string, unknown>,
-  ): Promise<Result< void, string>>;
+  setCustomData(data: Record<string, unknown>): Promise<Result<void, string>>;
 
   /**
    * Set contact info.
    */
-  setContactInfo(
-    data: Partial<ContactInfo>,
-  ): Promise<Result< void, string>>;
+  setContactInfo(data: Partial<ContactInfo>): Promise<Result<void, string>>;
 
   /**
    * Experimental.
    */
-  __unstableStartConversation(): Promise<Result< void, string>>;
+  __unstableStartConversation(): Promise<Result<void, string>>;
 
   /**
    * Experimental.
    */
   __unstableStartConversationWithOperator(
     operatorId: number,
-  ): Promise<Result< void, string>>;
+  ): Promise<Result<void, string>>;
 
   /**
    * Experimental.
    * Opens a conversation by id.
    */
-  __unstableOpenConversation(id: number): Promise<Result< void, string>>;
+  __unstableOpenConversation(id: number): Promise<Result<void, string>>;
 
   /**
    * Experimental.
    */
-  __unstableSetRegistration(
-    enabled: boolean,
-  ): Promise<Result< void, string>>;
+  __unstableSetRegistration(enabled: boolean): Promise<Result<void, string>>;
 
   /**
    * Experimental.
    */
-  __unstableSetProactive(enabled: boolean): Promise<Result< void, string>>;
+  __unstableSetProactive(enabled: boolean): Promise<Result<void, string>>;
 }
 
 export interface State {
@@ -109,6 +103,13 @@ export interface ContactInfo {
   mobile_number: string | null;
   company: string | null;
   external_customer_id: string | null;
+  city: string | null;
+  street: string | null;
+  country: string | null;
+  salutation: "mr" | "ms" | "pr" | "prof" | null;
+  gender: "m" | "f" | "d" | null;
+  custom_field_data: Record<string, null | string | string[]>;
+  instagram_username: string | null;
 }
 
 export interface Message {
