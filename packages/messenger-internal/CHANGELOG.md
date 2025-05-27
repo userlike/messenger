@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.3-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.2...@userlike/messenger-internal@3.2.3-alpha.0) (2025-05-27)
+
+
+### Bug Fixes
+
+* make iframe style csp compliant ([e97a239](https://github.com/userlike/messenger/commit/e97a239cfdb79ed290036e6ae7166f10b5fc5f15))
+
+
+
+
+
 ## [3.2.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.2-alpha.0...@userlike/messenger-internal@3.2.2) (2025-05-21)
 
 **Note:** Version bump only for package @userlike/messenger-internal
