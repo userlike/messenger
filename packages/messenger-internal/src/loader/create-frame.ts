@@ -6,19 +6,14 @@ export const createIFrame = async (): Promise<HTMLIFrameElement> => {
   iframe.title = 'Empty frame';
   iframe.setAttribute('aria-hidden', 'true');
   iframe.tabIndex = -1;
-  iframe.setAttribute(
-    "style",
-    `
-    position: absolute !important;
-    opacity: 0 !important;
-    height : 1px !important;
-    top : 0 !important;
-    left : 0 !important;
-    border : none !important;
-    display : block !important;
-    z-index : -1 !important;
-  `
-  );
+  iframe.style.position = 'absolute !important';
+  iframe.style.opacity = '0 !important';
+  iframe.style.height = '1px !important';
+  iframe.style.top = '0 !important';
+  iframe.style.left = '0 !important';
+  iframe.style.border = 'none !important';
+  iframe.style.display = 'block !important';
+  iframe.style.zIndex = '-1 !important';
 
   return new Promise<HTMLIFrameElement>((resolve) => {
     iframe.addEventListener("load", () => resolve(iframe));
