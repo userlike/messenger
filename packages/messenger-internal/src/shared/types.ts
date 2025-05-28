@@ -7,6 +7,7 @@ export interface MountOptions {
     getToken: () => Promise<string>;
     onError?: (e: string) => void;
   };
+  nonce?: string;
 }
 
 export interface MessengerApi extends MessengerActionsApi, MessengerStateApi {}
