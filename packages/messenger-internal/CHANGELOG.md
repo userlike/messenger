@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0-alpha.0...@userlike/messenger-internal@3.3.0-alpha.1) (2025-06-11)
+
+
+### Bug Fixes
+
+* fix script loader iframe's style ([9995de9](https://github.com/userlike/messenger/commit/9995de908a045c8fc6c53a00c1a083c8e5b3af36))
+
+
+
+
+
 # [3.3.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.3-alpha.0...@userlike/messenger-internal@3.3.0-alpha.0) (2025-05-28)
 
 
