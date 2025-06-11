@@ -37,6 +37,7 @@ export interface WidgetLoader {
 }
 
 export interface LegacyOptions {
+  nonce?: string;
   ready?: () => void;
   onError?: (err: unknown) => void;
 }
