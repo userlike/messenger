@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.3-alpha.0...@userlike/messenger-internal@3.3.0-alpha.0) (2025-05-28)
+
+
+### Features
+
+* add nonce for csp to mount options ([70e2796](https://github.com/userlike/messenger/commit/70e27967553fda3c910f6524357222675bc7d7da))
+
+
+
+
+
 ## [3.2.3-alpha.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.2.2...@userlike/messenger-internal@3.2.3-alpha.0) (2025-05-27)
 
 
