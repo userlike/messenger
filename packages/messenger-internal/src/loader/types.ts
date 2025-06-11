@@ -7,6 +7,7 @@ import { Result } from "../shared";
 
 export interface WidgetLoaderSettings {
   widget_key: string;
+  nonce?: string;
 }
 
 export interface WidgetLoader {
