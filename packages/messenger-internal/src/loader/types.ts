@@ -16,7 +16,6 @@ export interface WidgetLoaderSettings {
 
 export interface CreateMessengerSettings {
   widget_key: string;
-  nonce?: string;
 }
 
 export interface WidgetLoader {
@@ -24,7 +23,7 @@ export interface WidgetLoader {
   createMessenger(
     version: 0,
   ): (
-    settings: CreateMessengerSettings,
+    settings: CreateMessengerSettings & { nonce?: string },
   ) => Promise<Result<MessengerInfo<0, v0.Api>, string>>;
 
   createMessenger(
