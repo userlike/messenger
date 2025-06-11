@@ -5,7 +5,16 @@ import type * as v1 from "../v1";
 import type * as v2 from "../v2";
 import { Result } from "../shared";
 
+/**
+ * @deprecated Use `CreateMessengerSettings` or `RunSettings` instead.
+ * Will be removed in a future minor version.
+ */
 export interface WidgetLoaderSettings {
+  widget_key: string;
+  nonce?: string;
+}
+
+export interface CreateMessengerSettings {
   widget_key: string;
   nonce?: string;
 }
@@ -15,25 +24,25 @@ export interface WidgetLoader {
   createMessenger(
     version: 0,
   ): (
-    settings: WidgetLoaderSettings,
+    settings: CreateMessengerSettings,
   ) => Promise<Result<MessengerInfo<0, v0.Api>, string>>;
 
   createMessenger(
     version: 1,
   ): (
-    settings: WidgetLoaderSettings,
+    settings: CreateMessengerSettings,
   ) => Promise<Result<MessengerInfo<1, v1.Api>, string>>;
 
   createMessenger(
     version: 2,
   ): (
-    settings: WidgetLoaderSettings,
+    settings: CreateMessengerSettings,
   ) => Promise<Result<MessengerInfo<2, v2.Api>, string>>;
 
   createMessenger(
     version: number,
   ): (
-    settings: WidgetLoaderSettings,
+    settings: CreateMessengerSettings,
   ) => Promise<Result<MessengerInfo<number, VersionedApi<number>>, string>>;
 }
 
@@ -43,7 +52,11 @@ export interface LegacyOptions {
   onError?: (err: unknown) => void;
 }
 
+export interface RunSettings {
+  widget_key: string;
+}
+
 export type Run = (
-  settings: WidgetLoaderSettings,
+  settings: RunSettings,
   hostWindow: Window,
 ) => Promise<WidgetLoader>;
