@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.5](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0-alpha.4...@userlike/messenger-internal@3.3.0-alpha.5) (2025-06-11)
+
+
+### Bug Fixes
+
+* move nonce type into v0 CreateMessengerSettings ([a5cdec8](https://github.com/userlike/messenger/commit/a5cdec86eebfbfbc6612c563d16fecf3a226188b))
+
+
+
+
+
 # [3.3.0-alpha.4](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0-alpha.3...@userlike/messenger-internal@3.3.0-alpha.4) (2025-06-11)
 
 **Note:** Version bump only for package @userlike/messenger-internal

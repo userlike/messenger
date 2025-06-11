@@ -3731,7 +3731,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@userlike/messenger-internal@npm:^3.3.0-alpha.4, @userlike/messenger-internal@workspace:packages/messenger-internal":
+"@userlike/messenger-internal@npm:^3.3.0-alpha.5, @userlike/messenger-internal@workspace:packages/messenger-internal":
   version: 0.0.0-use.local
   resolution: "@userlike/messenger-internal@workspace:packages/messenger-internal"
   languageName: unknown
@@ -3741,7 +3741,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@userlike/messenger@workspace:packages/messenger"
   dependencies:
-    "@userlike/messenger-internal": "npm:^3.3.0-alpha.4"
+    "@userlike/messenger-internal": "npm:^3.3.0-alpha.5"
   languageName: unknown
   linkType: soft
 
