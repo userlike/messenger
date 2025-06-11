@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0-alpha.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0-alpha.1...@userlike/messenger-internal@3.3.0-alpha.2) (2025-06-11)
+
+
+### Features
+
+* add optional nonce to LegacyOptions ([46e5466](https://github.com/userlike/messenger/commit/46e5466a9ff165e3e30a275df928eb2b87d4780e))
+
+
+
+
+
 # [3.3.0-alpha.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0-alpha.0...@userlike/messenger-internal@3.3.0-alpha.1) (2025-06-11)
 
 
