@@ -18,6 +18,7 @@
     "v:pre": "mklib version --pre",
     "v:grad": "mklib version --grad",
     "pub": "mklib publish",
+    "pub:pre": "mklib publish --dist-tag internal",
     "prepare": "mklib prepare"
   },
   "devDependencies": {
