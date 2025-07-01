@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0-alpha.5...@userlike/messenger-internal@3.3.0) (2025-07-01)
+
+**Note:** Version bump only for package @userlike/messenger-internal
+
+
+
+
+
 # [3.3.0-alpha.5](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0-alpha.4...@userlike/messenger-internal@3.3.0-alpha.5) (2025-06-11)
 
 
