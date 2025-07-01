@@ -204,11 +204,31 @@ import { v1 } from "@userlike/messenger";
 }
 ```
 
-## Error handling
-Messenger API never throws an error. Instead it returns a [`Result`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/shared/Result.ts) which represents either a successful outcome or an erroneous outcome.
-In technical terms, `Result` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `Success` and `Error`, similar to [Rust's `Result<T, E>`](https://doc.rust-lang.org/std/result/).
+## Error Handling
 
-It's important to notice that the API function won't throw an error by itself, but you need to handle the Action Result and throw an error by yourself as you need it.
+All Messenger API methods return a `Result` object, which is a tagged union of `Success` and `Error` (similar to [Rust's `Result<T, E>`](https://doc.rust-lang.org/std/result/)). The API itself never throws exceptions. You are responsible for checking the result and handling errors as needed.
+
+**Result Structure:**
+- `{ kind: "success", value: ... }` for successful operations
+- `{ kind: "error", error: ... }` for failed operations
+
+**Example:**
+```typescript
+const result = await api.someAction();
+
+if (result.kind === "error") {
+  // Handle the error (e.g., log, show message, or throw)
+  console.error("Messenger API error:", result.error);
+  throw new Error(result.error);
+}
+
+// Success case
+const value = result.value;
+```
+
+> **Best Practice:** Always check the `kind` property before accessing the result value. Using TypeScript helps ensure you handle both success and error cases safely.
+
+For more details, see the [`Result` type definition](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/shared/Result.ts).
 
 ## Versioning
 
