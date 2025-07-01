@@ -2,7 +2,37 @@
   <img width="144" height="144" src="https://avatars2.githubusercontent.com/u/1116280">
 </p>
 
-# Official Userlike Messenger API
+
+# Userlike Messenger API
+
+<!-- prettier-ignore-start -->
+
+## Table of Contents
+
+* [Install](#install)
+  + [ES modules](#es-modules)
+  + [commonjs](#commonjs)
+  + [AMD loader (requirejs)](#amd-loader-requirejs)
+  + [script tag](#script-tag)
+* [Upgrading to Version 2](#upgrading-to-version-2)
+* [Usage](#usage)
+* [Examples](#examples)
+  + [Create the API](#create-the-api)
+  + [Create/destroy messenger](#createdestroy-messenger)
+  + [Change visibility](#change-visibility)
+  + [Clear user session / Logout](#clear-user-session--logout)
+  + [Maximize/Minimize](#maximizeminimize)
+  + [Set custom data](#set-custom-data)
+  + [Set contact info](#set-contact-info)
+  + [Listen to changes](#listen-to-changes)
+  + [Observables](#observables)
+* [Error Handling](#error-handling)
+* [Contact Authentication](#contact-authentication)
+* [CSP](#csp)
+* [Versioning](#versioning)
+  + [Dates](#dates)
+
+<!-- prettier-ignore-end -->
 
 ## Install
 
@@ -13,13 +43,13 @@ npm install @userlike/messenger
 ### ES modules
 
 ```js
-import { createMessenger } from '@userlike/messenger';
+import { createMessenger } from "@userlike/messenger";
 ```
 
 ### commonjs
 
 ```js
-const { createMessenger } = require('@userlike/messenger');
+const { createMessenger } = require("@userlike/messenger");
 ```
 
 ### AMD loader (requirejs)
@@ -35,7 +65,7 @@ require(['userlike-messenger'], function (userlike) {
 ```html
 <!--
 unpkg is an open source project. It's not affiliated with Userlike. Use it to quickly and easily load
-messenger api without bundling it yourself. We highly advise against using unpkg for production.
+messenger API without bundling it yourself. We highly advise against using unpkg for production.
 -->
 <script src="https://unpkg.com/@userlike/messenger/dist/browser/index.min.js"></script>
 <script>
@@ -43,13 +73,15 @@ messenger api without bundling it yourself. We highly advise against using unpkg
 </script>
 ```
 
-------
-
 ## Upgrading to Version 2
 
-Version 2 is a breaking change that adds support for widget routers on single page applications. If you are using version 1, we highly recommend upgrading to version 2 as soon as possible. See the [migration guide](./MIGRATION.md).
+Version 2 introduces breaking changes, including support for widget routers on single page applications and improved API structure. If you are using version 1, we highly recommend upgrading to version 2 as soon as possible.
 
-------
+- **Key changes in v2:**
+  - Support for widget routers in single page applications (SPA)
+  - Improved API structure and error handling
+
+See the [migration guide](./MIGRATION.md) for detailed upgrade instructions.
 
 ## Usage
 
@@ -62,6 +94,7 @@ See [examples](#examples) for further details on how to use `createMessenger`.
 **React + typescript:** [react playground](https://codesandbox.io/p/sandbox/userlike-messenger-api-v2-p2c8fq).
 
 ## Examples
+
 ### Create the API
 
 ```typescript
@@ -79,7 +112,7 @@ async function createApi(): Promise<v2.Api> {
 
   if (api === null) {
     throw new Error(
-      "api reached end-of-life, please check documentation and upgrade."
+      "api reached end-of-life, please check documentation and upgrade.",
     );
   }
 
@@ -91,7 +124,7 @@ async function createApi(): Promise<v2.Api> {
 
 ```typescript
 (api: v2.Api) => {
-  const subscription = api.mount().subscribe(result => {
+  const subscription = api.mount().subscribe((result) => {
     if (result.kind === "error") {
       console.error(result.error);
       return;
@@ -120,7 +153,7 @@ async (messenger: v2.Messenger) => {
     button: false,
     notifications: false,
   });
-}
+};
 
 // Show everything
 async (messenger: v2.Messenger) => {
@@ -129,7 +162,7 @@ async (messenger: v2.Messenger) => {
     button: true,
     notifications: true,
   });
-}
+};
 ```
 
 ### Clear user session / Logout
@@ -137,7 +170,7 @@ async (messenger: v2.Messenger) => {
 ```typescript
 async (messenger: v2.Messenger) => {
   await messenger.logout();
-}
+};
 ```
 
 ### Maximize/Minimize
@@ -156,7 +189,7 @@ async (messenger: v2.Messenger) => {
   await messenger.setCustomData({
     test: "test data",
   });
-}
+};
 ```
 
 ### Set contact info
@@ -167,7 +200,7 @@ async (messenger: v2.Messenger) => {
     name: "Foo Bar",
     email: "foobar@example.com",
   });
-}
+};
 ```
 
 ### Listen to changes
@@ -181,7 +214,7 @@ async (messenger: v2.Messenger) => {
 
   // unsubscribe when you don't need to listen to changes anymore
   subscription.unsubscribe();
-}
+};
 ```
 
 ### Observables
@@ -196,12 +229,12 @@ import { v1 } from "@userlike/messenger";
 (api: v2.Api) => {
   const unreadMessageCount$ = Rx.pipe(
     api.mount(),
-    $.filter((result) => result.kind === 'success'),
+    $.filter((result) => result.kind === "success"),
     $.map((result) => result.value),
     $.switchMap((messenger) => messenger.state$),
     $.map(v2.getUnreadMessageCount),
   );
-}
+};
 ```
 
 ## Error Handling
@@ -209,10 +242,12 @@ import { v1 } from "@userlike/messenger";
 All Messenger API methods return a `Result` object, which is a tagged union of `Success` and `Error` (similar to [Rust's `Result<T, E>`](https://doc.rust-lang.org/std/result/)). The API itself never throws exceptions. You are responsible for checking the result and handling errors as needed.
 
 **Result Structure:**
+
 - `{ kind: "success", value: ... }` for successful operations
 - `{ kind: "error", error: ... }` for failed operations
 
 **Example:**
+
 ```typescript
 const result = await api.someAction();
 
@@ -230,12 +265,6 @@ const value = result.value;
 
 For more details, see the [`Result` type definition](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/shared/Result.ts).
 
-## Versioning
-
-_Userlike Messenger API_ follows relatively short cycles of deprecations and end of lifes. The API versioning is designed in such a way to force its consumers to be prepared and to plan for an end-of-life situation. When end-of-life date is reached. that version of the API becomes unavailable; which is reflected in Typescript types.
-
-We highly suggest you to use Typescript to consume _Userlike Messenger API_ so to be able to handle unhappy code paths safely.
-
 ## Contact Authentication
 
 To use Contact Authentication, you first need to create a secret "Messenger API authentication signing key" in your API settings. You then need to securely store that signing key in your system and create a service that uses that signing to create a JWT that we use to authenticate a Contact.
@@ -250,7 +279,7 @@ interface TokenPayload {
 }
 ```
 
-You can then then pass the externalToken configuration when calling the mount() function of our Messenger API:
+You can then pass the externalToken configuration when calling the mount() function of our Messenger API:
 
 ```typescript
 api.mount({
@@ -260,9 +289,9 @@ api.mount({
     },
     onError: (e) => {
       // callback to handle errors related to contact authentication
-    }
-  }
-})
+    },
+  },
+});
 ```
 
 When the JWT is valid, your Contacts will have access to all their ongoing and previous conversations regardless of which browser, device, or platform they're using the Messenger on.
@@ -280,6 +309,12 @@ api.mount({
   nonce: "your-nonce",
 });
 ```
+
+## Versioning
+
+_Userlike Messenger API_ follows relatively short cycles of deprecations and end of lifes. The API versioning is designed in such a way to force its consumers to be prepared and to plan for an end-of-life situation. When end-of-life date is reached. that version of the API becomes unavailable; which is reflected in Typescript types.
+
+We highly suggest you to use Typescript to consume _Userlike Messenger API_ so to be able to handle unhappy code paths safely.
 
 ### Dates
 
