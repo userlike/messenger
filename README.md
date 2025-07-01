@@ -204,6 +204,18 @@ import { v1 } from "@userlike/messenger";
 }
 ```
 
+## Error handling
+Messenger API never throws an error. Instead it returns a [`Result`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/shared/Result.ts) which represents either a successful outcome or an erroneous outcome.
+In technical terms, `Result` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `Success` and `Error`, similar to [Rust's `Result<T, E>`](https://doc.rust-lang.org/std/result/).
+
+It's important to notice that the API function won't throw an error by itself, but you need to handle the Action Result and throw an error by yourself as you need it.
+
+## Versioning
+
+_Userlike Messenger API_ follows relatively short cycles of deprecations and end of lifes. The API versioning is designed in such a way to force its consumers to be prepared and to plan for an end-of-life situation. When end-of-life date is reached. that version of the API becomes unavailable; which is reflected in Typescript types.
+
+We highly suggest you to use Typescript to consume _Userlike Messenger API_ so to be able to handle unhappy code paths safely.
+
 ## Contact Authentication
 
 To use Contact Authentication, you first need to create a secret "Messenger API authentication signing key" in your API settings. You then need to securely store that signing key in your system and create a service that uses that signing to create a JWT that we use to authenticate a Contact.
@@ -231,24 +243,23 @@ api.mount({
     }
   }
 })
-
 ```
 
 When the JWT is valid, your Contacts will have access to all their ongoing and previous conversations regardless of which browser, device, or platform they're using the Messenger on.
 
 In case the JWT is invalid (for example when it expired or was signed incorrectly) the `onError` callback is called.
 
-## Error handling
-Messenger API never throws an error. Instead it returns a [`Result`](https://github.com/userlike/messenger/blob/master/packages/messenger-internal/src/shared/Result.ts) which represents either a successful outcome or an erroneous outcome.
-In technical terms, `Result` is a [tagged union](https://en.wikipedia.org/wiki/Tagged_union) of `Success` and `Error`, similar to [Rust's `Result<T, E>`](https://doc.rust-lang.org/std/result/).
+## CSP
 
-It's important to notice that the API function won't throw an error by itself, but you need to handle the Action Result and throw an error by yourself as you need it.
+To use the Userlike Messenger API in your application, you need to ensure that your Content Security Policy (CSP) allows the necessary resources. Please follow Userlike's [CSP documentation](https://docs.userlike.com/setup/widget-integration/content-security-policy) to configure your CSP correctly.
 
-## Versioning
+A nonce can be provided to the Messenger API as follows:
 
-_Userlike Messenger API_ follows relatively short cycles of deprecations and end of lifes. The API versioning is designed in such a way to force its consumers to be prepared and to plan for an end-of-life situation. When end-of-life date is reached. that version of the API becomes unavailable; which is reflected in Typescript types.
-
-We highly suggest you to use Typescript to consume _Userlike Messenger API_ so to be able to handle unhappy code paths safely.
+```typescript
+api.mount({
+  nonce: "your-nonce",
+});
+```
 
 ### Dates
 
