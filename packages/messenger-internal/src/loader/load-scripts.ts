@@ -30,7 +30,7 @@ export function loadScripts(
         addScriptSrc(contentDocument, manifest[lastIdx], () => {
           const { run }: Window & { run: Run } = unsafeCoerce(contentWindow);
 
-          run({ widget_key: widgetKey }, window)
+          run({ widget_key: widgetKey, base_url: baseUrl }, window)
             .then((widgetLoader) => resolve(widgetLoader))
             .catch(reject);
         });
