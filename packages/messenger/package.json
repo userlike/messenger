@@ -13,9 +13,9 @@
   },
   "license": "MIT",
   "files": [
-    "dist/es",
-    "dist/cjs",
-    "dist/browser"
+    "dist/cjs/**",
+    "dist/es/**",
+    "dist/browser/**"
   ],
   "scripts": {
     "prebuild": "yarn clean",
