@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## [2.0.3](https://github.com/userlike/messenger/compare/@userlike/messenger@2.0.2...@userlike/messenger@2.0.3) (2026-05-22)
+
+
+### Bug Fixes
+
+* **repo:** include all dist subdirectories in published tarballs ([aa6fa37](https://github.com/userlike/messenger/commit/aa6fa37c06ea3914e0d26dc6fb6f97bd644efb8c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @userlike/messenger-internal bumped to 3.3.3
+
 ## [2.0.2](https://github.com/userlike/messenger/compare/@userlike/messenger@2.0.1...@userlike/messenger@2.0.2) (2026-05-22)
 
 
