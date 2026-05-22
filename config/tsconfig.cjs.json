@@ -1,8 +1,8 @@
 {
   "extends": "./tsconfig.es.json",
   "compilerOptions": {
-    "target": "ES5",
     "module": "CommonJS",
+    "moduleResolution": "Bundler",
     "composite": false,
     "declaration": false
   }
