@@ -24,11 +24,11 @@ jobs:
       - name: Build all packages (topological order)
         run: yarn workspaces foreach -At --no-private run build
       - name: Pack all packages (workspace: refs are substituted to concrete versions)
-        run: yarn workspaces foreach -At --no-private pack --out '%s-%v.tgz'
+        run: yarn workspaces foreach -At --no-private pack
       - name: Stage-publish messenger-internal (must go first - messenger depends on it)
-        run: npm stage publish packages/messenger-internal/messenger-internal-*.tgz
+        run: npm stage publish packages/messenger-internal/package.tgz
       - name: Stage-publish messenger
-        run: npm stage publish packages/messenger/messenger-*.tgz
+        run: npm stage publish packages/messenger/package.tgz
       - name: Summary
         run: |
           echo "Packages staged on npm. Approve via npmjs.com or 'npm stage promote'." >> $GITHUB_STEP_SUMMARY
