@@ -13,8 +13,8 @@
   },
   "license": "MIT",
   "files": [
-    "dist/es",
-    "dist/cjs"
+    "dist/cjs/**",
+    "dist/es/**"
   ],
   "scripts": {
     "prebuild": "yarn clean",
