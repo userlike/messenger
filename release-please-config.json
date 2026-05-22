@@ -4,6 +4,7 @@
   "include-component-in-tag": true,
   "tag-separator": "@",
   "separate-pull-requests": false,
+  "group-pull-request-title-pattern": "chore(release): release ${branch}",
   "plugins": ["node-workspace"],
   "packages": {
     "packages/messenger": {
