@@ -1,6 +1,6 @@
 {
   "name": "@userlike/messenger-internal",
-  "version": "3.3.2",
+  "version": "3.3.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
@@ -17,11 +17,13 @@
     "dist/cjs"
   ],
   "scripts": {
-    "build": "mklib tsc",
-    "build:cjs": "mklib tsc -b tsconfig.cjs.json",
+    "prebuild": "yarn clean",
+    "build": "yarn build:es && yarn build:cjs",
+    "build:es": "tsc",
+    "build:cjs": "tsc -b tsconfig.cjs.json",
     "clean": "rm -rf dist",
-    "lint": "mklib eslint src --ext .ts",
-    "test": "mklib jest"
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "jest --passWithNoTests"
   },
   "publishConfig": {
     "access": "public"

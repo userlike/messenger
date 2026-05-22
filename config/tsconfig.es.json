@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "ES2015",
+    "target": "ES2017",
+    "module": "ES2020",
     "composite": true,
-    "lib": ["ES5", "dom", "ES2015.Promise"],
-    "moduleResolution": "Node",
+    "lib": ["ES2017", "DOM"],
+    "moduleResolution": "Bundler",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
