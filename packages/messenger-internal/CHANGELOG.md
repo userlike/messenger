@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## [3.3.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.1...@userlike/messenger-internal@3.3.2) (2026-05-22)
+
+
+### Bug Fixes
+
+* **messenger-internal:** pass base_url through to run() ([#60](https://github.com/userlike/messenger/issues/60)) ([889d070](https://github.com/userlike/messenger/commit/889d0706522a214a38d8c142ec4fd3fbe8f8313d))
+
+
+### Reverts
+
+* **messenger-internal:** roll back [#60](https://github.com/userlike/messenger/issues/60) (re-applied in next commit) ([888a34c](https://github.com/userlike/messenger/commit/888a34cbb06d674646ad190a8330edb2248501bc))
+
 ## [3.3.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0...@userlike/messenger-internal@3.3.1) (2025-08-07)
 
 **Note:** Version bump only for package @userlike/messenger-internal
