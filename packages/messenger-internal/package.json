@@ -22,7 +22,7 @@
     "build:es": "tsc",
     "build:cjs": "tsc -b tsconfig.cjs.json",
     "clean": "rm -rf dist",
-    "lint": "eslint src --ext .ts",
+    "lint": "eslint 'src/**/*.ts'",
     "test": "jest --passWithNoTests"
   },
   "publishConfig": {

@@ -18,12 +18,12 @@
   "devDependencies": {
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "eslint": "^8.57.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
     "jest": "^30.4.2",
     "lefthook": "^2.1.8",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.4",
     "webpack": "^5.107.1",
     "webpack-cli": "^7.0.2"
   },
