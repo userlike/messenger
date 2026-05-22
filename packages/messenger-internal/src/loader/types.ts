@@ -53,7 +53,6 @@ export interface LegacyOptions {
 
 export interface RunSettings {
   widget_key: string;
-  base_url?: string;
 }
 
 export type Run = (
