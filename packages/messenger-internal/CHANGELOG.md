@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## [3.3.3](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.2...@userlike/messenger-internal@3.3.3) (2026-05-22)
+
+
+### Bug Fixes
+
+* **repo:** include all dist subdirectories in published tarballs ([aa6fa37](https://github.com/userlike/messenger/commit/aa6fa37c06ea3914e0d26dc6fb6f97bd644efb8c))
+
 ## [3.3.2](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.1...@userlike/messenger-internal@3.3.2) (2026-05-22)
 
 
