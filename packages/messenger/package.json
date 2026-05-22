@@ -1,6 +1,6 @@
 {
   "name": "@userlike/messenger",
-  "version": "2.0.2",
+  "version": "2.0.1",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
@@ -20,17 +20,17 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "yarn build:es && yarn build:cjs && yarn build:browser",
-    "build:es": "mklib tsc",
-    "build:cjs": "mklib tsc -b tsconfig.cjs.json",
+    "build:es": "tsc",
+    "build:cjs": "tsc -b tsconfig.cjs.json",
     "build:browser": "webpack -c webpack.config.js",
     "clean": "rm -rf dist",
-    "lint": "mklib eslint src --ext .ts",
-    "test": "mklib jest"
+    "lint": "eslint src --ext .ts",
+    "test": "jest --passWithNoTests"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@userlike/messenger-internal": "^3.3.2"
+    "@userlike/messenger-internal": "workspace:*"
   }
 }

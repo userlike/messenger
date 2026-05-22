@@ -1,0 +1,35 @@
+name: publish
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: yarn
+          registry-url: https://registry.npmjs.org
+      - run: corepack enable
+      - run: npm install -g npm@^11.15.0
+      - run: yarn install --immutable
+      - name: Build all packages (topological order)
+        run: yarn workspaces foreach -At --no-private run build
+      - name: Pack all packages (workspace: refs are substituted to concrete versions)
+        run: yarn workspaces foreach -At --no-private pack --out '%s-%v.tgz'
+      - name: Stage-publish messenger-internal (must go first — messenger depends on it)
+        run: npm stage publish packages/messenger-internal/messenger-internal-*.tgz
+      - name: Stage-publish messenger
+        run: npm stage publish packages/messenger/messenger-*.tgz
+      - name: Summary
+        run: |
+          echo "Packages staged on npm. Approve via npmjs.com or 'npm stage promote'." >> $GITHUB_STEP_SUMMARY
+          echo "Order to approve: messenger-internal first, then messenger." >> $GITHUB_STEP_SUMMARY
