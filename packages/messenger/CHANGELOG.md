@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## [2.1.0](https://github.com/userlike/messenger/compare/messenger@v2.0.1...messenger@v2.1.0) (2026-05-22)
+
+
+### Features
+
+* add legacy api as v0 ([935ace2](https://github.com/userlike/messenger/commit/935ace2beeb45cc9a1205add95d29ef5f9f62923))
+* add new api version v2 ([6267723](https://github.com/userlike/messenger/commit/62677237090b025ef52942cd9007eedc4c4dc96b))
+* improve v2 type names ([1fee6a6](https://github.com/userlike/messenger/commit/1fee6a6302f296adec8a7f5efec956f4889b97bd))
+* **messenger:** add browser compatible dist file ([fda3814](https://github.com/userlike/messenger/commit/fda3814817479da65ff2fc711ecc7e940211edcd))
+* **messenger:** change browser dist file to umd format ([6c8b27e](https://github.com/userlike/messenger/commit/6c8b27e63192351c29455885e3cbaf0e5e80f0b4))
+* rename ActionResult to Result and swap generic args ([08218f9](https://github.com/userlike/messenger/commit/08218f9acf57cb4a7cab0296c74c6b6b3fa6392c))
+
+
+### Bug Fixes
+
+* fix version mismatch in createMessenger types ([f343cb1](https://github.com/userlike/messenger/commit/f343cb1f4bb9c8918e06d954136381aafa2d2cc4))
+* **messenger:** add browser dist file to published list of files ([ea76dd4](https://github.com/userlike/messenger/commit/ea76dd402de57c87e5e3cb0e2d9034780425b66e))
+* **messenger:** remove 'browser' main field ([9fa457f](https://github.com/userlike/messenger/commit/9fa457fb4fb5bd0062ed26887ede0ddb7a5377f9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @userlike/messenger-internal bumped to 4.0.0
+
 ## [2.0.1](https://github.com/userlike/messenger/compare/@userlike/messenger@2.0.0...@userlike/messenger@2.0.1) (2025-08-07)
 
 **Note:** Version bump only for package @userlike/messenger

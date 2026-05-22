@@ -1,4 +1,4 @@
 {
-  "packages/messenger": "2.0.1",
-  "packages/messenger-internal": "3.3.1"
+  "packages/messenger": "2.1.0",
+  "packages/messenger-internal": "4.0.0"
 }

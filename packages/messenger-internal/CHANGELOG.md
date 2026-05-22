@@ -4,6 +4,62 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## [4.0.0](https://github.com/userlike/messenger/compare/messenger-internal@v3.3.1...messenger-internal@v4.0.0) (2026-05-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **messenger-internal:** `widget_key` and `config` fields are removed from `WidgetLoader`.
+* 
+* 
+
+### Features
+
+* add consumeToken to v1 api ([a2ad6c4](https://github.com/userlike/messenger/commit/a2ad6c463f555496346990df6f72da4e03dbbc86))
+* add contact info to exposed um state ([68921c3](https://github.com/userlike/messenger/commit/68921c350b9f36f15ee431b54d5feee6fdc5d2e4))
+* add contact verification ([e989a71](https://github.com/userlike/messenger/commit/e989a711901ee11fefd345ec2b0929f4bfdc2c12))
+* add experimental __unstableOpenConversation to v1 api ([71af30e](https://github.com/userlike/messenger/commit/71af30e3147e02987fcae964c9517a60c58cc22c))
+* add experimental setRegistration and setProactive actions ([bbdf3e7](https://github.com/userlike/messenger/commit/bbdf3e7bb16acdb7e4beafbeb82c56bfd193cb02))
+* add legacy api as v0 ([935ace2](https://github.com/userlike/messenger/commit/935ace2beeb45cc9a1205add95d29ef5f9f62923))
+* add new api version v2 ([6267723](https://github.com/userlike/messenger/commit/62677237090b025ef52942cd9007eedc4c4dc96b))
+* add new contact form fields ([f0897cd](https://github.com/userlike/messenger/commit/f0897cd62f1c8f3763f21f8d74332c04f8ed7218))
+* add nonce for csp to mount options ([70e2796](https://github.com/userlike/messenger/commit/70e27967553fda3c910f6524357222675bc7d7da))
+* add openConversationId to mount options ([07e7d45](https://github.com/userlike/messenger/commit/07e7d45f9598088bba7f90f0bfe40addf5c567d5))
+* add optional nonce to LegacyOptions ([46e5466](https://github.com/userlike/messenger/commit/46e5466a9ff165e3e30a275df928eb2b87d4780e))
+* add support for an optional credentials param to v1 api mount ([9a62ce4](https://github.com/userlike/messenger/commit/9a62ce4f4eb583560bf99af1bd6b2ad0e5589c38))
+* allow reporting of original errors for script load events ([f05ff4b](https://github.com/userlike/messenger/commit/f05ff4bfa62473ae2309b2b2dda96aad3a39faa5))
+* extend mount api to return reason when no messenger mounts ([e628076](https://github.com/userlike/messenger/commit/e628076bd9a6d8283abd4e818cd0f091e32a70bd))
+* improve v2 type names ([1fee6a6](https://github.com/userlike/messenger/commit/1fee6a6302f296adec8a7f5efec956f4889b97bd))
+* increase iframe accessibility ([1d861d5](https://github.com/userlike/messenger/commit/1d861d52be0d236033a6060757d3490c46d92c65))
+* **internal:** add loadWidgetConfig & loadAssetsManifest ([ebe1ba4](https://github.com/userlike/messenger/commit/ebe1ba4a82aaad637fe0902ea5afa245e1d61169))
+* introduce experimental ui config option ([47b9ed7](https://github.com/userlike/messenger/commit/47b9ed78bd8d96382018fbdd3e3b555707fcda6c))
+* introduce minimize ([e803a17](https://github.com/userlike/messenger/commit/e803a17143c7a03df238686c72d1025ee34288c3))
+* introduce show/hide, separate from mount/unmount ([1d976a1](https://github.com/userlike/messenger/commit/1d976a18c4ed695b7ca459777d4d6f13344b6ada))
+* rename ActionResult to Result and swap generic args ([08218f9](https://github.com/userlike/messenger/commit/08218f9acf57cb4a7cab0296c74c6b6b3fa6392c))
+
+
+### Bug Fixes
+
+* add nonce to WidgetLoaderSettings too ([0da6b2e](https://github.com/userlike/messenger/commit/0da6b2ef78ea21fe6d6bb5602b94ac2902e28fe2))
+* fix accidental take-over of document title ([ba1829d](https://github.com/userlike/messenger/commit/ba1829d77dfc49112105d92f87f4f64390ee127f))
+* fix return type of v2 mount ([da5e725](https://github.com/userlike/messenger/commit/da5e7258476ef67b17c5c438b2830f5bd517f811))
+* fix script loader iframe's style ([e2a14e1](https://github.com/userlike/messenger/commit/e2a14e1319dd387560a22c05cf94639bf9f67559))
+* fix script loader iframe's style ([9995de9](https://github.com/userlike/messenger/commit/9995de908a045c8fc6c53a00c1a083c8e5b3af36))
+* improve error handling of widget loading ([c1870f8](https://github.com/userlike/messenger/commit/c1870f8c429efffae558a339c02b16b10a49e4d3))
+* **internal:** drop process.env usage ([38858b7](https://github.com/userlike/messenger/commit/38858b79f990012dfd6a8f1f08a2e4f48fb26dde)), closes [#12](https://github.com/userlike/messenger/issues/12)
+* make iframe style csp compliant ([e97a239](https://github.com/userlike/messenger/commit/e97a239cfdb79ed290036e6ae7166f10b5fc5f15))
+* make VersionStatus a non-const enum ([c03c1fc](https://github.com/userlike/messenger/commit/c03c1fcc2b1cbe4e3dd4b3b994c54f61eedefc8b))
+* move nonce type into v0 CreateMessengerSettings ([a5cdec8](https://github.com/userlike/messenger/commit/a5cdec86eebfbfbc6612c563d16fecf3a226188b))
+* reduce the chance of multiple messengers conflicting with each other ([e7bc350](https://github.com/userlike/messenger/commit/e7bc350bee9ef10a2faede0d14b09df8321866c7))
+* remove mention of AuthParams ([8fde53c](https://github.com/userlike/messenger/commit/8fde53c4662eadc5ec0c7cc2219d0f0c0045dd0e))
+
+
+### Code Refactoring
+
+* drop config from WidgetLoaderSettings ([bc32432](https://github.com/userlike/messenger/commit/bc32432df54b0222eacecf0521809446efdca4e7))
+* impl asset loading from umm manifest ([9c9cfbd](https://github.com/userlike/messenger/commit/9c9cfbd3f1fe0009c75d36cfe77e66dc1c422e9a))
+* **messenger-internal:** remove unnecessary fields from WidgetLoader interface ([c61471d](https://github.com/userlike/messenger/commit/c61471df34a122f5e2728730f81ad92d4ab2e147))
+
 ## [3.3.1](https://github.com/userlike/messenger/compare/@userlike/messenger-internal@3.3.0...@userlike/messenger-internal@3.3.1) (2025-08-07)
 
 **Note:** Version bump only for package @userlike/messenger-internal
