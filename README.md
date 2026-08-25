@@ -3,7 +3,7 @@
 </p>
 
 
-# Userlike Messenger API
+# Lime Connect Messenger API
 
 <!-- prettier-ignore-start -->
 
@@ -64,7 +64,7 @@ require(['userlike-messenger'], function (userlike) {
 
 ```html
 <!--
-unpkg is an open source project. It's not affiliated with Userlike. Use it to quickly and easily load
+unpkg is an open source project. It's not affiliated with Lime Connect. Use it to quickly and easily load
 messenger API without bundling it yourself. We highly advise against using unpkg for production.
 -->
 <script src="https://unpkg.com/@userlike/messenger/dist/browser/index.min.js"></script>
@@ -300,7 +300,7 @@ In case the JWT is invalid (for example when it expired or was signed incorrectl
 
 ## CSP
 
-To use the Userlike Messenger API in your application, you need to ensure that your Content Security Policy (CSP) allows the necessary resources. Please follow Userlike's [CSP documentation](https://docs.userlike.com/setup/widget-integration/content-security-policy) to configure your CSP correctly.
+To use the Lime Connect Messenger API in your application, you need to ensure that your Content Security Policy (CSP) allows the necessary resources. Please follow Lime Connect's [CSP documentation](https://docs.lime-connect.com/setup/widget-integration/content-security-policy) to configure your CSP correctly.
 
 A nonce can be provided to the Messenger API as follows:
 
@@ -312,15 +312,15 @@ api.mount({
 
 ## Versioning
 
-_Userlike Messenger API_ follows relatively short cycles of deprecations and end of lifes. The API versioning is designed in such a way to force its consumers to be prepared and to plan for an end-of-life situation. When end-of-life date is reached. that version of the API becomes unavailable; which is reflected in Typescript types.
+_Lime Connect Messenger API_ follows relatively short cycles of deprecations and end of lifes. The API versioning is designed in such a way to force its consumers to be prepared and to plan for an end-of-life situation. When end-of-life date is reached. that version of the API becomes unavailable; which is reflected in Typescript types.
 
-We highly suggest you to use Typescript to consume _Userlike Messenger API_ so to be able to handle unhappy code paths safely.
+We highly suggest you to use Typescript to consume _Lime Connect Messenger API_ so to be able to handle unhappy code paths safely.
 
 ### Dates
 
 - **v2** <br />
-  Deprecation: 2026-08-01 <br />
-  End-of-life: 2027-08-01
+  Deprecation: 2027-08-01 <br />
+  End-of-life: 2028-08-01
 - **v1** <br />
   Deprecation: 2025-08-01 <br />
   End-of-life: 2026-08-01
