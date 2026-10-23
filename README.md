@@ -203,6 +203,20 @@ async (messenger: v2.Messenger) => {
 };
 ```
 
+`setContactInfo` resolves as soon as the update is queued. It does not wait for the server, so `kind: "success"` does not mean the data was saved. The update is sent once a visitor becomes a contact; for a new visitor that happens when they start their first conversation. Until then, `getState().contact` stays empty.
+
+Each call payload is validated as a whole: if one field is invalid, none of the fields in that call are saved. Send values you don't control, such as phone numbers typed in by users, in a separate call so they can't block the rest.
+
+| Field | Accepted values |
+| --- | --- |
+| `phone_number`, `mobile_number` | International format (E.164): `+`, country code, then digits only, 4 to 15 digits in total, for example `+4930123456`. Spaces, dashes, dots, parentheses, a `00` prefix and a national `0` prefix are rejected. |
+| `country` | ISO 3166-1 alpha-2 code, for example `DE`. |
+| `gender` | `"m"`, `"f"` or `"d"`. |
+| `salutation` | `"mr"`, `"ms"`, `"pr"` or `"prof"`. |
+| All other fields | A string or `null`. |
+
+Empty strings are rejected for every field. Leave a field out when you have no value for it; `null` clears a value that is already stored.
+
 ### Listen to changes
 
 ```typescript
